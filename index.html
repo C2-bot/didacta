@@ -1532,8 +1532,7 @@ function openModal(code) {
   // Bind CTA — dataLayer push + class for Sleeknote
   const ctaBtn = modal.querySelector('.cta-dettagli-evento');
   if (ctaBtn) {
-    ctaBtn.addEventListener('click', (ev) => {
-      ev.stopPropagation();
+    ctaBtn.addEventListener('click', () => {
       // Push event data to dataLayer for GTM / Sleeknote
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
