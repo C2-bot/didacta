@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C2 Group — Stand Didacta Firenze 2026</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NBNV7582');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --c2-blue: #0046AA;
+  --c2-blue-dark: #003080;
+  --c2-blue-light: #E8F0FE;
+  --c2-accent: #FF6B2B;
+  --c2-accent-hover: #E85A1B;
+  --c2-green: #1B9E5A;
+  --c2-purple: #7B3FA0;
+  --c2-warm: #F8F6F3;
+  --c2-text: #1A1A2E;
+  --c2-text-mid: #4A4A6A;
+  --c2-text-light: #8888A0;
+  --c2-border: #E2E2EE;
+  --c2-card-bg: #FFFFFF;
+  --c2-shadow: 0 2px 16px rgba(0,30,80,0.06);
+  --c2-shadow-hover: 0 8px 32px rgba(0,30,80,0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 100px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  font-size: 15px;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--c2-warm);
+  color: var(--c2-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── HEADER ────────────────────────────────── */
+.header {
+  background: linear-gradient(135deg, var(--c2-blue) 0%, var(--c2-blue-dark) 100%);
+  padding: 28px 40px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 24px rgba(0,20,60,0.15);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.brand-separator {
+  width: 1.5px;
+  height: 32px;
+  background: rgba(255,255,255,0.3);
+}
+
+.brand-logo-didacta {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.header-info {
+  text-align: right;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.header-info strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* ─── TABS ──────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab {
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  border: none;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  letter-spacing: 0.2px;
+  position: relative;
+  bottom: -1px;
+}
+
+.tab:hover {
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.9);
+}
+
+.tab.active {
+  background: var(--c2-warm);
+  color: var(--c2-blue);
+  font-weight: 600;
+}
+
+.tab-icon {
+  margin-right: 8px;
+  font-size: 1.05em;
+}
+
+/* ─── MAIN ──────────────────────────────────── */
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px 40px 60px;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeUp 0.35s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── FILTERS ───────────────────────────────── */
+.filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c2-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-right: 4px;
+  white-space: nowrap;
+}
+
+.filter-btn {
+  padding: 10px 18px;
+  border: 1.5px solid var(--c2-border);
+  border-radius: var(--radius-pill);
+  background: white;
+  color: var(--c2-text-mid);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.filter-btn:hover {
+  border-color: var(--c2-blue);
+  color: var(--c2-blue);
+  background: var(--c2-blue-light);
+}
+
+.filter-btn.active {
+  background: var(--c2-blue);
+  color: white;
+  border-color: var(--c2-blue);
+}
+
+.filter-separator {
+  width: 1px;
+  height: 28px;
+  background: var(--c2-border);
+  margin: 0 6px;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 18px 10px 42px;
+  border: 1.5px solid var(--c2-border);
+  border-radius: var(--radius-pill);
+  background: white;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--c2-text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: var(--c2-blue);
+}
+
+.search-box input::placeholder {
+  color: var(--c2-text-light);
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c2-text-light);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+/* ─── DAY SELECTOR ──────────────────────────── */
+.day-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.day-btn {
+  flex: 1;
+  padding: 18px 20px;
+  border: 2px solid var(--c2-border);
+  border-radius: var(--radius);
+  background: white;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.day-btn:hover {
+  border-color: var(--c2-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--c2-shadow);
+}
+
+.day-btn.active {
+  border-color: var(--c2-blue);
+  background: var(--c2-blue);
+  color: white;
+  box-shadow: 0 4px 20px rgba(0,70,170,0.25);
+}
+
+.day-btn .day-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.day-btn.active .day-label { opacity: 0.8; }
+
+.day-btn .day-date {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.day-btn .day-count {
+  font-size: 0.78rem;
+  margin-top: 4px;
+  opacity: 0.55;
+  font-weight: 500;
+}
+
+.day-btn.active .day-count { opacity: 0.75; }
+
+/* ─── TYPE FILTERS (pills) ──────────────────── */
+.type-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.type-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--c2-border);
+  background: white;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.type-pill:hover { border-color: var(--c2-blue); }
+
+.type-pill.active {
+  border-color: transparent;
+  color: white;
+}
+
+.type-pill[data-type="Workshop"].active { background: var(--c2-blue); }
+.type-pill[data-type="Demo"].active { background: var(--c2-green); }
+.type-pill[data-type="Seminario"].active { background: var(--c2-purple); }
+.type-pill[data-type="Visita Guidata"].active { background: var(--c2-accent); }
+
+.type-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.type-pill[data-type="Workshop"] .type-dot { background: var(--c2-blue); }
+.type-pill[data-type="Demo"] .type-dot { background: var(--c2-green); }
+.type-pill[data-type="Seminario"] .type-dot { background: var(--c2-purple); }
+.type-pill[data-type="Visita Guidata"] .type-dot { background: var(--c2-accent); }
+.type-pill.active .type-dot { background: white; }
+
+.type-pill .pill-count {
+  background: rgba(0,0,0,0.08);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.type-pill.active .pill-count { background: rgba(255,255,255,0.25); }
+
+/* ─── ROOM FILTER ───────────────────────────── */
+.room-filter-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.room-pill {
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--c2-border);
+  background: white;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--c2-text-mid);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.room-pill:hover { border-color: var(--c2-blue); color: var(--c2-blue); }
+
+.room-pill.active {
+  background: var(--c2-text);
+  color: white;
+  border-color: var(--c2-text);
+}
+
+/* ─── RESULTS COUNTER ───────────────────────── */
+.results-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.results-count {
+  font-size: 0.85rem;
+  color: var(--c2-text-light);
+  font-weight: 500;
+}
+
+.results-count strong {
+  color: var(--c2-text);
+  font-weight: 700;
+}
+
+/* ─── VIEW TOGGLE ───────────────────────────── */
+.view-toggle {
+  display: flex;
+  background: white;
+  border: 1.5px solid var(--c2-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  padding: 3px;
+}
+
+.view-toggle-btn {
+  padding: 7px 16px;
+  border: none;
+  background: transparent;
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--c2-text-mid);
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.view-toggle-btn:hover {
+  color: var(--c2-text);
+}
+
+.view-toggle-btn.active {
+  background: var(--c2-blue);
+  color: white;
+  font-weight: 600;
+}
+
+/* ─── ROOM GROUP (for Vista per Aula) ───────── */
+.room-group {
+  margin-bottom: 36px;
+}
+
+.room-group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 10px 18px;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 140px;
+  z-index: 10;
+}
+
+.room-group-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--c2-blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.room-group-name {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c2-text);
+}
+
+.room-group-count {
+  font-size: 0.78rem;
+  color: var(--c2-text-light);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* ─── TIMELINE ──────────────────────────────── */
+.timeline {
+  position: relative;
+}
+
+.time-group {
+  margin-bottom: 32px;
+}
+
+.time-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 6px 16px 6px 12px;
+  background: white;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 140px;
+  z-index: 10;
+}
+
+.time-label .clock-icon {
+  font-size: 1.1rem;
+}
+
+.time-label span {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c2-text);
+  letter-spacing: -0.3px;
+}
+
+.events-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 14px;
+}
+
+/* ─── EVENT CARD ────────────────────────────── */
+.event-card {
+  background: var(--c2-card-bg);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--c2-border);
+  overflow: hidden;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.event-card:hover {
+  border-color: transparent;
+  box-shadow: var(--c2-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.event-card-stripe {
+  height: 4px;
+  width: 100%;
+}
+
+.event-card[data-type="Workshop"] .event-card-stripe { background: var(--c2-blue); }
+.event-card[data-type="Demo"] .event-card-stripe { background: var(--c2-green); }
+.event-card[data-type="Seminario"] .event-card-stripe { background: var(--c2-purple); }
+.event-card[data-type="Visita Guidata"] .event-card-stripe { background: var(--c2-accent); }
+
+.event-card-body {
+  padding: 18px 20px;
+}
+
+.event-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.event-type-badge {
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.event-card[data-type="Workshop"] .event-type-badge { background: rgba(0,70,170,0.1); color: var(--c2-blue); }
+.event-card[data-type="Demo"] .event-type-badge { background: rgba(27,158,90,0.1); color: var(--c2-green); }
+.event-card[data-type="Seminario"] .event-type-badge { background: rgba(123,63,160,0.1); color: var(--c2-purple); }
+.event-card[data-type="Visita Guidata"] .event-type-badge { background: rgba(255,107,43,0.1); color: var(--c2-accent); }
+
+.event-partner {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c2-text-mid);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-card-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--c2-text);
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.event-card-room {
+  font-size: 0.78rem;
+  color: var(--c2-text-light);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid var(--c2-border);
+  background: rgba(0,0,0,0.015);
+}
+
+.event-capacity {
+  font-size: 0.78rem;
+  color: var(--c2-text-light);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-capacity .cap-bar {
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--c2-border);
+  overflow: hidden;
+}
+
+.event-capacity .cap-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--c2-green);
+  transition: width 0.6s ease;
+}
+
+.event-detail-btn {
+  font-size: 0.78rem;
+  color: var(--c2-blue);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: gap 0.2s;
+}
+
+.event-detail-btn:hover {
+  gap: 8px;
+}
+
+/* ─── SOLD OUT ──────────────────────────────── */
+.event-card.sold-out {
+  opacity: 0.65;
+  pointer-events: auto;
+}
+
+.event-card.sold-out .event-card-body {
+  position: relative;
+}
+
+.sold-out-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #D32F2F;
+  color: white;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(211,47,47,0.3);
+  z-index: 2;
+  transform: rotate(2deg);
+}
+
+.event-card.sold-out .event-card-stripe {
+  background: #999 !important;
+}
+
+.event-card.sold-out .cap-fill {
+  background: #D32F2F !important;
+}
+
+/* Sold out in modal */
+.modal-sold-out-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FDE8E8;
+  border: 1.5px solid #F5C6C6;
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  margin-bottom: 20px;
+}
+
+.modal-sold-out-banner .sold-out-icon {
+  font-size: 1.3rem;
+}
+
+.modal-sold-out-banner .sold-out-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #B71C1C;
+}
+
+/* ─── MODAL ─────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,15,30,0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.2);
+  animation: modalSlide 0.3s ease;
+  position: relative;
+}
+
+@keyframes modalSlide {
+  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-stripe {
+  height: 6px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.modal[data-type="Workshop"] .modal-stripe { background: var(--c2-blue); }
+.modal[data-type="Demo"] .modal-stripe { background: var(--c2-green); }
+.modal[data-type="Seminario"] .modal-stripe { background: var(--c2-purple); }
+.modal[data-type="Visita Guidata"] .modal-stripe { background: var(--c2-accent); }
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.05);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c2-text-mid);
+  transition: background 0.2s;
+  z-index: 2;
+}
+
+.modal-close:hover { background: rgba(0,0,0,0.1); }
+
+.modal-content {
+  padding: 36px 36px 28px;
+}
+
+.modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.modal-type-badge {
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.modal[data-type="Workshop"] .modal-type-badge { background: rgba(0,70,170,0.1); color: var(--c2-blue); }
+.modal[data-type="Demo"] .modal-type-badge { background: rgba(27,158,90,0.1); color: var(--c2-green); }
+.modal[data-type="Seminario"] .modal-type-badge { background: rgba(123,63,160,0.1); color: var(--c2-purple); }
+.modal[data-type="Visita Guidata"] .modal-type-badge { background: rgba(255,107,43,0.1); color: var(--c2-accent); }
+
+.modal-code {
+  font-size: 0.78rem;
+  color: var(--c2-text-light);
+  font-weight: 600;
+  font-family: Arial, monospace;
+}
+
+.modal-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--c2-text);
+  margin-bottom: 20px;
+}
+
+.modal-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.modal-info-item {
+  background: var(--c2-warm);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.modal-info-item .info-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--c2-text-light);
+  margin-bottom: 4px;
+}
+
+.modal-info-item .info-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--c2-text);
+}
+
+.modal-abstract-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--c2-text-light);
+  margin-bottom: 8px;
+}
+
+.modal-abstract {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--c2-text-mid);
+  margin-bottom: 28px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 14px 28px;
+  background: var(--c2-accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--c2-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255,107,43,0.3);
+}
+
+.btn-secondary {
+  padding: 14px 28px;
+  background: white;
+  color: var(--c2-blue);
+  border: 1.5px solid var(--c2-blue);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: var(--c2-blue-light);
+}
+
+/* ─── PLACEHOLDER TABS ──────────────────────── */
+.placeholder-section {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.placeholder-title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  color: var(--c2-text);
+  margin-bottom: 8px;
+}
+
+.placeholder-text {
+  font-size: 0.92rem;
+  color: var(--c2-text-light);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── EMPTY STATE ───────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--c2-text-light);
+}
+
+.empty-state .empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  opacity: 0.3;
+}
+
+.empty-state p {
+  font-size: 0.95rem;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
+
+/* ─── TOUCH / RESPONSIVE ────────────────────── */
+@media (max-width: 768px) {
+  .header { padding: 20px 20px 0; }
+  .main { padding: 20px 20px 40px; }
+  .header-top { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .header-info { text-align: left; }
+  .events-row { grid-template-columns: 1fr; }
+  .modal-content { padding: 24px 24px 20px; }
+  .modal-info-grid { grid-template-columns: 1fr; }
+  .day-selector { flex-direction: column; }
+}
+
+@media (min-width: 1600px) {
+  html { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBNV7582"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="header">
+  <div class="header-top">
+    <div class="brand">
+      <img src="data:image/png;base64,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" alt="C2 Group" class="brand-logo-img">
+      <div class="brand-separator"></div>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAAAzCAYAAACaEpqBAAAACXBIWXMAAAsSAAALEgHS3X78AAAFaklEQVR4nO2c3XHbOBCAv9zk3boKolQQXQWGKoivAisVWFfByRWcUsExHcQVhOlA6YDuQK4AeQAwXEEARP3QBC18MxiRILDYmBsssAD4TmtNodAHfwytQOHtUoyr0BvFuAq9UYyr0BvFuAq98X5oBU5gDczs9RLYeHmVTV2pxbU6S7PzqMW1GkiHizJG45oBt/Z6Esirj5R3e7jIq5CLHhejuMVCb4yx5wqxpO3FmgH1KAhy7bmmmHHUBtAYg6lsfogZZpyiImWUrd9YeTWwojXIU/SYWhkrwmMk16Zf1y+rrAzJClhcUJdh0FrnlhZa660Os9VaN+Je2Tq1yFt58tYRWVprvfHuZb27A3pIuce0qe1zV3YVKVN31EVrrauELoOl3NyiAv5PPL+xqStr4CHx/FMkf4bpFWJt3STkVsD9Ab0eML3m4kC5LrrQob1ByM0tVt79N2AO/A08HSlrxq4BvACPVt4X4DlRd83uy3yyOsyBr4l6it0X/Wzbcm2+iGf3tK5z7smZY8aRh3R59GTmxdBdp9f1SxaBMkuvTMotSlex1VrPPFkTHXaLMy8v5GZUpMx3kdfYNmS9qdXVJSnb1yOki3Snh3QZPOXUc83E9S/CgdA16R4nJs8NhCVb4C5QT4nrF/YH22AmBKGe9LO4Xtk2JA3txENFZKd0WQbKxHQZnFyN63uiXOqZRI6n6kiZJpAnZ5C+QdLxWarNY7iULoOQk3E14nqaKJd6JpFjkUMhh1PoEsa4anI1rjvCL2/KrutJIf83h9wJhGdrst4tcSMJuVTpskOyYdctziJljtUl1tag5GRc0t3dYNyKNLAp3V2iL++W/TGcwozFfOqAnKm4n1hZHwJ1ZRv37Bv1Evgh0iIg41K6DM/QMwovyRme1maW52ZWIVKzxYneDzw2tqw/S3TE9NBCj1Aws0ubjZe/1buzyZAe6HBAtosug6fBFfBSKDzgI/+gKeNCm6l8KrLtyztVj2Pb1NqEXuS/XXLO3yQb48rJLYKZuiviU+uvhF1ZjI2VFwpfvGACm6GZ1iE9noi7NNfmz8jzn8BfdHfx5+gyKO+0zvZo2ZR2YL/FvIzmDHmKNm7UWHl+HOrSergFdVe35rywwTm6vDo5G1dh5OTmFgtviGJchd7IzbjcRj7JyuarC7cjxwN9tHH15GZchTdEMa5Cb+S2E3VOt/DApak4P0xQ8MjNuBQmbrOh3euk7O9CXFe08Z0JJvYjF7tdDKjCxIYWGOOpI+1ORdu+cbvtyHKhWspXNqXkXydDLxEElkBqcR3DLfsob+mj0btreBvd7nCVyyIOd7/y5Lq08ORvPPm1btf+sll2ySXlPOaa2/TN3v8j8twSyw/MDopH4CPtMauPtt4njjvaL1nQHhZ5BP7ERNyd/CfMbovUAZCrJje3KKntr7K/G5E3oV2b+8K+ATUY49gA/53Q9pTWsBT7Y7EG4yYrMj15kwM591wp7jA91hPpnmlNfAE5hduH9Uh6kL+k+57+q2PMxgXdXF6XMj7yizkp3MC+EGCsxuVmhXWHss0J8t0XZ7rU7aLDVTJW43L0cfACjnN1fekwesZqXG4cpDqU7VLmteVfBWM1rsr+rkj3HBPiJ39SuHHU6kC5GWW2GGWsxrXBzBQ/YAwtdgyt5rgPlzgqzKnv0Kkhx4wy3kqSc5zrEAvMy/1M+62q2j5T9vkNJhRxyichlZUnPxhS0y4VuR7rF/Gv5Vw1YzauLab3WGFc3wO70fJnjIFtMZH8U+Qr2g+x/WuTL19RjCvIW9pDr7z7+oKyJ+yejt5SdlAc5C0ZVyEzxjqgL4yAYlyF3ijGVeiNYlyF3ijGVeiN31eDzt2fOri8AAAAAElFTkSuQmCC" alt="Didacta" class="brand-logo-didacta">
+    </div>
+    <div class="header-info">
+      <strong>Stand K42 — Pad. Spadolini Inferiore</strong><br>
+      Fortezza da Basso, Firenze — 11 · 12 · 13 Marzo 2026
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-tab="eventi"><span class="tab-icon">📅</span> Eventi</button>
+    <button class="tab" data-tab="mappa"><span class="tab-icon">🗺️</span> Mappa Stand</button>
+    <button class="tab" data-tab="materiali"><span class="tab-icon">📦</span> Materiali</button>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ═══ TAB: EVENTI ═══ -->
+  <div class="tab-content active" id="tab-eventi">
+
+    <div class="day-selector" id="daySelector"></div>
+
+    <div class="type-filters" id="typeFilters"></div>
+
+    <div class="room-filter-row" id="roomFilters">
+      <span class="filter-label" style="margin-right:2px">Area:</span>
+    </div>
+
+    <div style="margin-bottom:24px">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Cerca per titolo, partner o parola chiave…">
+      </div>
+    </div>
+
+    <div class="results-bar">
+      <div class="results-count" id="resultsCount"></div>
+      <div class="view-toggle" id="viewToggle">
+        <button class="view-toggle-btn active" data-view="time">🕐 Per Orario</button>
+        <button class="view-toggle-btn" data-view="room">📍 Per Aula</button>
+      </div>
+    </div>
+
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <!-- ═══ TAB: MAPPA ═══ -->
+  <div class="tab-content" id="tab-mappa">
+    <div class="placeholder-section">
+      <div class="placeholder-icon">🗺️</div>
+      <div class="placeholder-title">Mappa dello Stand</div>
+      <p class="placeholder-text">Qui troverai la mappa interattiva del nostro stand con il dettaglio di tutte le aree espositive e i punti di interesse.</p>
+    </div>
+  </div>
+
+  <!-- ═══ TAB: MATERIALI ═══ -->
+  <div class="tab-content" id="tab-materiali">
+    <div class="placeholder-section">
+      <div class="placeholder-icon">📦</div>
+      <div class="placeholder-title">Materiali e Brochure</div>
+      <p class="placeholder-text">Scarica brochure, cataloghi e schede tecniche dei prodotti e delle soluzioni presenti nel nostro stand.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ MODAL ═══ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-stripe"></div>
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════
+// EVENT DATA
+// ════════════════════════════════════════════════
+const EVENTS = [{"date": "2026-03-11", "time": "10:00", "type": "Workshop", "code": "C2AGOR01", "partner": "Corriere della Sera", "room": "C2 Agorà", "title": "Un altro passo nel futuro della scuola con Google for Education e Corriere della Sera", "abstract": "C2 Group, in collaborazione con Google for Education e il Corriere della Sera ti invitano a scoprire il progetto \"\"A Scuola con il Corriere\"\", un'iniziativa unica che unisce il meglio della tecnologia Google Workspace for Education Plus con l'autorevolezza dei contenuti del Corriere della Sera.\nTi sveleremo come questa partnership epocale può offrirti gli strumenti per creare lezioni interattive, coinvolgenti e connesse al mondo reale. Dimentica i vecchi schemi e preparati a esplorare nuove metodologie didattiche che renderanno i tuoi studenti i veri protagonisti dell'apprendimento.", "link": "", "capacity": 30, "enrolled": 0}, {"date": "2026-03-11", "time": "10:00", "type": "Workshop", "code": "C2GOG01", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Google AI Experience - 3 tappe per il futuro della didattica: Workshop immersivo a rotazione su Gemini e NotebookLM", "abstract": "Vuoi potenziare il tuo insegnamento con l'AI? Partecipa al nostro laboratorio interattivo. Tre tappe da 15 minuti per padroneggiare l'ecosistema Google AI: usa NotebookLM come assistente allo studio inclusivo, sfrutta Gemini in Workspace per generare materiali in un attimo e dialoga con il Chatbot per ideare lezioni innovative. Un'esperienza operativa per acquisire subito strumenti reali. Conclusione con Q&A e bundle speciali per le scuole.", "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_experience_3_tappe_per_il_futuro_della_didattica_workshop_immersivo_a_rotazione_su_gemini_e_notebooklm_c2gog01_1", "capacity": 20, "enrolled": 0}, {"date": "2026-03-11", "time": "10:00", "type": "Visita Guidata", "code": "C2KAIR01", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair01", "capacity": 8, "enrolled": 0}, {"date": "2026-03-11", "time": "10:00", "type": "Workshop", "code": "C2LEG01", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Robotica educativa tra racconti e fantasia con LEGO®️ Education SPIKE Essential", "abstract": "Questo workshop di robotica educativa propone un'esperienza a tutto tondo in cui i partecipanti potranno raccontare e raccontarsi con fantasia e far prendere vita a personaggi ed ambienti grazie alla programmazione. Il gioco diventa motore dell’apprendimento: un’occasione per scoprire, sperimentare e collaborare.", "link": "https://exhibitor.fieradidacta.it/eventi/robotica_educativa_tra_racconti_e_fantasia_con_lego_education_spike_essential_c2leg01", "capacity": 12, "enrolled": 0}, {"date": "2026-03-11", "time": "10:00", "type": "Workshop", "code": "C2ROB01", "partner": "Arduino", "room": "C2 Robotica", "title": "Basta Cavi Scollegati! La Rivoluzione  Arduino \"Plug-and-Play\" entra in Classe", "abstract": "Avete mai passato metà lezione a cercare un contatto difettoso sulla breadboard? Con il nuovo Plug-and-Make Kit, l'elettronica diventa finalmente \"a prova di studente\". In questo workshop pratico vedremo come il sistema Modulino™ permetta di creare progetti funzionanti in pochi secondi, senza errori di cablaggio. Trasformeremo l'aula in un laboratorio di innovazione immediata, dove l'unico limite è la fantasia, non i cavetti interrotti.", "link": "https://exhibitor.fieradidacta.it/eventi/basta_cavi_scollegati_la_rivoluzione_arduino_plugandplay_entra_in_classe_c2rob01", "capacity": 12, "enrolled": 0}, {"date": "2026-03-11", "time": "10:00", "type": "Workshop", "code": "C2SFTW01", "partner": "Adobe", "room": "C2 Software Area", "title": "Creative Cloud Pro Plus: progettare contenuti visivi con strumenti evoluti", "abstract": "Creative Cloud Pro Plus introduce in ambito post diploma funzionalità avanzate di Photoshop e Illustrator oggi supportate da automazioni intelligenti. La sessione mostra come eseguire scontorni precisi, ritocchi rapidi, adattamenti grafici e variazioni di layout con strumenti che riducono la complessità operativa. Verranno inoltre presentati esempi di generazione e modifica di elementi visivi tramite AI integrata, utili per produrre materiali didattici di qualità professionale, anche in contesti non specialistici. E la nuova app Firefly Boards permette di rappresentare progetti in maniera semplice, visuale e lavorando anche in gruppo in tempo reale.", "link": "https://exhibitor.fieradidacta.it/eventi/creative_cloud_pro_plus_progettare_contenuti_visivi_con_strumenti_evoluti_c2sftw01", "capacity": 10, "enrolled": 0}, {"date": "2026-03-11", "time": "11:00", "type": "Demo", "code": "C2DEL01", "partner": "Delightex Edu", "room": "C2 Software Area", "title": "Dallo Spazio al Codice: Creare il Sistema Solare in VR potenziato dall'Intelligenza Artificiale", "abstract": "In questa demo esploreremo come trasformare una lezione di scienze in un'esperienza immersiva e inclusiva. Partendo da un progetto di realtà virtuale realizzato con i miei alunni, vedremo come \"dare vita\" ai pianeti attraverso il coding (CoBlocks), integrando ora le nuove funzionalità di Intelligenza Artificiale di Delightex", "link": "https://exhibitor.fieradidacta.it/eventi/dallo_spazio_al_codice_creare_il_sistema_solare_in_vr_potenziato_dallintelligenza_artificiale_c2del01", "capacity": 6, "enrolled": 0}, {"date": "2026-03-11", "time": "11:00", "type": "Demo", "code": "C2GEN01", "partner": "Genially", "room": "C2 Software Area", "title": "Scopri Genially: esperienze interattive per una didattica più coinvolgente", "abstract": "Una panoramica introduttiva su Genially per scoprire come creare esperienze interattive in modo semplice e immediato. Attraverso esempi concreti e l’esperienza degli ambassador educativi, esploreremo nuovi modi di comunicare e coinvolgere la classe in ogni ordine e grado.", "link": "https://exhibitor.fieradidacta.it/eventi/scopri_genially_esperienze_interattive_per_una_didattica_piu_coinvolgente_c2gen01", "capacity": 6, "enrolled": 0}, {"date": "2026-03-11", "time": "11:30", "type": "Workshop", "code": "C2AGOR02", "partner": "DSGA Online", "room": "C2 Agorà", "title": "Liquidazione dei Compensi Accessori al Personale Esperto: Aggiornamenti Normativi e Procedure Operative", "abstract": "Workshop dedicato all’analisi delle procedure di liquidazione dei compensi accessori destinati al personale esperto operante nelle istituzioni scolastiche, alla luce dei più recenti aggiornamenti normativi e delle indicazioni applicative.\n\nL’incontro, rivolto a DSGA, Dirigenti Scolastici, personale amministrativo e figure coinvolte nei processi contabili, intende offrire un quadro organico e operativo volto a garantire correttezza amministrativa.", "link": "https://exhibitor.fieradidacta.it/eventi/liquidazione_dei_compensi_accessori_al_personale_esperto_aggiornamenti_normativi_e_procedure_operative_c2agor02", "capacity": 30, "enrolled": 0}, {"date": "2026-03-11", "time": "11:30", "type": "Workshop", "code": "C2GOG02", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Google AI per la Governance: Gemini e NotebookLM per Dirigenti e DSGA. Strategie ed efficienza per scuola complessa", "abstract": "La gestione scolastica richiede velocità. In un laboratorio operativo di un'ora, scopri come l'AI di Google diventa il tuo miglior alleato. Attraverso tre stazioni di lavoro vedrai: NotebookLM analizzare complessi decreti e bandi PNRR; Gemini in Workspace automatizzare la stesura di circolari e dati di bilancio; Gemini Chatbot supportare strategie e comunicazioni istituzionali. Riduci drasticamente il carico burocratico e guadagna efficienza immediata.", "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_per_la_governance_gemini_e_notebooklm_per_dirigenti_e_dsga_strategie_ed_efficienza_per_scuola_complessa_c2gog02", "capacity": 20, "enrolled": 0}, {"date": "2026-03-11", "time": "11:30", "type": "Visita Guidata", "code": "C2KAIR02", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair02", "capacity": 8, "enrolled": 0}, {"date": "2026-03-11", "time": "11:30", "type": "Workshop", "code": "C2LEG02", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Una gara di cavallette robotiche? Con LEGO®️ Education SPIKE Prime puoi provare questo brivido anche tu!", "abstract": "Un workshop esperienziale per docenti della scuola secondaria che vogliono portare in classe robotica e didattica attiva. Con LEGO® Education SPIKE™ Prime progetteremo “cavallette” capaci di muoversi senza ruote, sperimentando prototipazione, coding e sfida cooperativa. Vivremo in prima persona il ciclo di progettazione, tra errori, miglioramenti e gara finale, per riflettere su STEAM, valutazione formativa e competenze trasversali", "link": "https://exhibitor.fieradidacta.it/eventi/una_gara_di_cavallette_robotiche_con_lego_education_spike_prime_puoi_provare_questo_brivido_anche_tu_c2leg02", "capacity": 12, "enrolled": 0}, {"date": "2026-03-11", "time": "11:30", "type": "Workshop", "code": "C2ROB02", "partner": "Arduino", "room": "C2 Robotica", "title": "Arduino Alvik: Il Robot che \"Cresce\" con i tuoi Studenti", "abstract": "Dimenticate i robot fragili e complicati. Arduino Alvik è la piattaforma mobile definitiva: robusta, intelligente e pronta all'uso. In questo workshop esploreremo come insegnare la robotica autonoma usando i sensori di distanza, colore e movimento integrati. Vedremo come passare con naturalezza dalla programmazione a blocchi a MicroPython, preparando gli studenti alle sfide reali dell'automazione moderna con uno strumento che non si ferma mai.", "link": "https://exhibitor.fieradidacta.it/eventi/arduino_alvik_il_robot_che_cresce_con_i_tuoi_studenti_c2rob02", "capacity": 12, "enrolled": 0}, {"date": "2026-03-11", "time": "11:30", "type": "Workshop", "code": "C2SFTW02", "partner": "ThingLink", "room": "C2 Software Area", "title": "Oltre l’aula: progettare ecosistemi interattivi con ThingLink per laboratori professionalizzanti innovativi", "abstract": "Crea simulazioni immersive e tour 360° per laboratori all'avanguardia. Un ponte tra digitale e pratica professionale.", "link": "https://exhibitor.fieradidacta.it/eventi/oltre_laula_progettare_ecosistemi_interattivi_con_thinglink_per_laboratori_professionalizzanti_innovativi_c2sftw02", "capacity": 10, "enrolled": 0}, {"date": "2026-03-11", "time": "13:30", "type": "Workshop", "code": "C2EXT01", "partner": "Delightex Edu", "room": "E16 Cavedio - Pad.Spadolini Inferiore", "title": "Beyond the Prompt: progettare intelligenze in ambienti 3D con Delightex", "abstract": "Utilizzare la gamification e l'interattività per innovare l’esperienza didattica in ogni ordine e grado", "link": "https://exhibitor.fieradidacta.it/eventi/beyond_the_prompt_progettare_intelligenze_in_ambienti_3d_con_delightex_c2ext01", "capacity": 40, "enrolled": 0}, {"date": "2026-03-11", "time": "14:30", "type": "Workshop", "code": "C2AGOR03", "partner": "AID", "room": "C2 Agorà", "title": "I Segnali Invisibili: Leggere i Prerequisiti per Scrivere il Futuro.", "abstract": "Prima della penna e del libro esistono abilità fondamentali: attenzione, memoria, percezione e competenze metafonologiche. L’intervento guida i docenti nell’osservazione sistematica dei “segnali silenziosi” che precedono lettura, scrittura e calcolo. Analizzeremo i principali precursori cognitivi e i campanelli d’allarme 5-7 anni, con strumenti di screening e protocolli operativi. Obiettivo: intervenire presto in modo mirato e inclusivo.", "link": "https://exhibitor.fieradidacta.it/eventi/i_segnali_invisibili_leggere_i_prerequisiti_per_scrivere_il_futuro_c2agor03", "capacity": 30, "enrolled": 0}, {"date": "2026-03-11", "time": "14:30", "type": "Workshop", "code": "C2GOG03", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Lezione Inclusiva: Superpoteri Google Edu Plus. Dai video ai Class Tools, un workshop immersivo pratico a rotazione.", "abstract": "La didattica digitale evolve con Education Plus. Partecipa al laboratorio per testare tre strumenti chiave: Lezione Attiva: trasforma i video in quiz e potenzia la lettura con l'AI.  Esercizi Guidati: automatizza le correzioni e ottieni dati immediati sulla classe. Regia di Classe: controlla gli schermi degli studenti e guida la navigazione in tempo reale.\nRiduci il carico di lavoro e trasforma ogni lezione in un'esperienza inclusiva.", "link": "https://exhibitor.fieradidacta.it/eventi/lezione_inclusiva_superpoteri_google_edu_plus_dai_video_ai_class_tools_un_workshop_immersivo_pratico_a_rotazione_c2gog03", "capacity": 20, "enrolled": 0}, {"date": "2026-03-11", "time": "14:30", "type": "Visita Guidata", "code": "C2KAIR03", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair03", "capacity": 8, "enrolled": 0}, {"date": "2026-03-11", "time": "14:30", "type": "Workshop", "code": "C2LEG03", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "La robotica a servizio della sostenibilità con i kit LEGO®️ Education Scienze", "abstract": "Raccogliere i rifiuti è uno dei problemi più comuni. In questo workshop per docenti di scuola primaria cercheremo soluzioni originali per sostenere e ripulire l'ambiente marino testando soluzioni diverse e lavorando per prove ed errori.", "link": "https://exhibitor.fieradidacta.it/eventi/la_robotica_a_servizio_della_sostenibilita_con_i_kit_lego_education_scienze_c2leg03", "capacity": 12, "enrolled": 0}, {"date": "2026-03-11", "time": "14:30", "type": "Workshop", "code": "C2SFTW03", "partner": "Verse", "room": "C2 Software Area", "title": "ZenkAI Live Lab l’AI che vede lo stream e supporta la lezione tecnica in diretta", "abstract": "Dimostrazione operativa su laboratorio: ZenkAI analizza lo stream (tablet/telecamera) e, tramite avatar, segue in tempo reale azioni e procedure degli studenti. Il docente mantiene la regia con checklist, tempi e interventi mirati. \nChiusura con un piccolo gioco a premi: i vincitori del giorno ricevono licenze ZenkAI in omaggio.", "link": "https://exhibitor.fieradidacta.it/eventi/zenkai_live_lab_lai_che_vede_lo_stream_e_supporta_la_lezione_tecnica_in_diretta_c2sftw03", "capacity": 10, "enrolled": 0}, {"date": "2026-03-11", "time": "15:00", "type": "Demo", "code": "C2GEN02", "partner": "Genially", "room": "C2 Software Area", "title": "Genially Experience: scopri le novità e vivile nella Challenge live", "abstract": "Le novità di Genially protagoniste: nuovi widget e funzionalità potenziate dall’AI per creare con maggiore velocità e impatto. La sessione si conclude con una Challenge live, momento interattivo per sperimentare le nuove funzionalità e aggiudicarsi gadget Genially.", "link": "https://exhibitor.fieradidacta.it/eventi/genially_experience_scopri_le_novita_e_vivile_nella_challenge_live_c2gen02", "capacity": 6, "enrolled": 0}, {"date": "2026-03-11", "time": "16:00", "type": "Demo", "code": "C2DEL02", "partner": "Delightex Edu", "room": "C2 Software Area", "title": "AI Buddy - A colloquio con la Storia: Il Divo Cesare", "abstract": "Giulio Cesare smette di essere una statua silenziosa per diventare un testimone oculare interattivo. Grazie all'AI Buddy, gli studenti possono varcare la soglia del tempo e interrogare direttamente il condottiero sulle sue campagne militari e sulle sue ambizioni politiche.)", "link": "https://exhibitor.fieradidacta.it/eventi/ai_buddy_a_colloquio_con_la_storia_il_divo_cesare_c2del02", "capacity": 6, "enrolled": 0}, {"date": "2026-03-11", "time": "16:00", "type": "Workshop", "code": "C2GOG04", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Didattica Generativa con i Chromebook: Gems e Class Tools al servizio della scuola", "abstract": "L'idea non è fare una lezione teorica, ma una simulazione dal vivo che mostri la potenza dell'ecosistema Google (Gemini + Classroom + Chromebook) in azione. Il focus è mostrare come Gemini Gems e Chromebook permettono un'attività di investigazione digitale attiva, inclusiva per i BES e perfettamente integrata con Classroom e Presentazioni.", "link": "https://exhibitor.fieradidacta.it/eventi/didattica_generativa_con_i_chromebook_gems_e_class_tools_al_servizio_della_scuola_c2gog04", "capacity": 20, "enrolled": 0}, {"date": "2026-03-11", "time": "16:00", "type": "Visita Guidata", "code": "C2KAIR04", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair04", "capacity": 8, "enrolled": 0}, {"date": "2026-03-11", "time": "16:00", "type": "Workshop", "code": "C2LEG04", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Nuovo LEGO®️ Education Informatica & IA: scopri in anteprima l’esperienza STEM più attesa dell’anno!", "abstract": "Sei pronto a scoprire il nuovo LEGO®️ Education Informatica & IA? Esploreremo cosa si può fare in classe, con attività pratiche e funzionalità innovative che introducono coding, dati e concetti di intelligenza artificiale con un approccio hands-on. Unisciti a noi per una sessione interattiva che ti mostrerà come portare sperimentazione e creatività nelle tue classi con il kit più atteso dell'anno!", "link": "https://exhibitor.fieradidacta.it/eventi/nuovo_lego_education_informatica_ia_scopri_in_anteprima_lesperienza_stem_piu_attesa_dellanno_c2leg04", "capacity": 12, "enrolled": 0}, {"date": "2026-03-11", "time": "16:00", "type": "Workshop", "code": "C2ROB04", "partner": "Arduino", "room": "C2 Robotica", "title": "Arduino UNO Q: Scatena la Potenza dell'Intelligenza Artificiale nel tuo Laboratorio", "abstract": "Pensavate che Arduino avesse dei limiti? Con la UNO Q li abbiamo abbattuti tutti. Unitevi a noi per scoprire come integrare IoT e Intelligenza Artificiale nelle vostre lezioni senza impazzire. Questo workshop è una masterclass di potenza pura: imparerete a guidare gli studenti nella creazione di sistemi intelligenti che \"pensano\" e comunicano in tempo reale. È il momento di alzare l'asticella del vostro laboratorio e preparare la classe alle sfide tecnologiche che contano davvero.", "link": "https://exhibitor.fieradidacta.it/eventi/arduino_uno_q_scatena_la_potenza_dellintelligenza_artificiale_nel_tuo_laboratorio_c2rob04", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "10:00", "type": "Workshop", "code": "C2AGOR05", "partner": "Bullismo No Grazie", "room": "C2 Agorà", "title": "INFORMATI E FORMATI SU BULLISMO E CYBERBULLISMO", "abstract": "Bullismo e cyberbullismo cambiano insieme ai contesti in cui gli studenti crescono, comunicano e costruiscono la propria identità. La scuola resta il luogo chiave per riconoscere i segnali, prevenire l’esclusione e promuovere relazioni sane e consapevoli. Il seminario offre strumenti e chiavi di lettura per comprendere le forme attuali del fenomeno e rafforzare il ruolo educativo nella creazione di un ambiente sicuro e inclusivo.", "link": "https://exhibitor.fieradidacta.it/eventi/informati_e_formati_su_bullismo_e_cyberbullismo_c2agor05", "capacity": 30, "enrolled": 0}, {"date": "2026-03-12", "time": "10:00", "type": "Workshop", "code": "C2GOG05", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Lezione Inclusiva: Superpoteri Google Edu Plus. Dai video ai Class Tools, un workshop immersivo pratico a rotazione.", "abstract": "La didattica digitale evolve con Education Plus. Partecipa al laboratorio per testare tre strumenti chiave: Lezione Attiva: trasforma i video in quiz e potenzia la lettura con l'AI.  Esercizi Guidati: automatizza le correzioni e ottieni dati immediati sulla classe. Regia di Classe: controlla gli schermi degli studenti e guida la navigazione in tempo reale.\nRiduci il carico di lavoro e trasforma ogni lezione in un'esperienza inclusiva.", "link": "https://exhibitor.fieradidacta.it/eventi/lezione_inclusiva_superpoteri_google_edu_plus_dai_video_ai_class_tools_un_workshop_immersivo_pratico_a_rotazione_c2gog05", "capacity": 20, "enrolled": 0}, {"date": "2026-03-12", "time": "10:00", "type": "Visita Guidata", "code": "C2KAIR05", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair05", "capacity": 8, "enrolled": 0}, {"date": "2026-03-12", "time": "10:00", "type": "Workshop", "code": "C2LEG05", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Il lavoro di squadra si pratica non si insegna con il kit LEGO®️ Education SPIKE Prime", "abstract": "In questo workshop dedicato alla scuola secondaria metteremo in campo tutte le nostre abilità di cooperazione. Cercheremo di collaborare per risolvere sfide attraverso l’uso dei mattoncini più famosi al mondo.", "link": "https://exhibitor.fieradidacta.it/eventi/il_lavoro_di_squadra_si_pratica_non_si_insegna_con_il_kit_lego_education_spike_prime_c2leg05", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "10:00", "type": "Workshop", "code": "C2ROB05", "partner": "Arduino", "room": "C2 Robotica", "title": "Basta Cavi Scollegati! La Rivoluzione  Arduino \"Plug-and-Play\" entra in Classe", "abstract": "Avete mai passato metà lezione a cercare un contatto difettoso sulla breadboard? Con il nuovo Plug-and-Make Kit, l'elettronica diventa finalmente \"a prova di studente\". In questo workshop pratico vedremo come il sistema Modulino™ permetta di creare progetti funzionanti in pochi secondi, senza errori di cablaggio. Trasformeremo l'aula in un laboratorio di innovazione immediata, dove l'unico limite è la fantasia, non i cavetti interrotti.", "link": "https://exhibitor.fieradidacta.it/eventi/basta_cavi_scollegati_la_rivoluzione_arduino_plugandplay_entra_in_classe_c2rob05", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "10:00", "type": "Workshop", "code": "C2SFTW04", "partner": "Adobe", "room": "C2 Software Area", "title": "Adobe Express: progettare idee e contenuti visivi in modo collaborativo, collaborazione tra docenti e studenti", "abstract": "Adobe Express è l'applicazione più adatta per la progettazione di contenuti visivi e presentazioni. In questa sessione verrà mostrato come organizzare immagini e spazi per sviluppare progetti interdisciplinari o preparare materiali didattici, con focus sarà sulla progettazione collaborativa.", "link": "https://exhibitor.fieradidacta.it/eventi/adobe_express_progettare_idee_e_contenuti_visivi_in_modo_collaborativo_collaborazione_tra_docenti_e_studenti_c2sftw04", "capacity": 10, "enrolled": 0}, {"date": "2026-03-12", "time": "11:00", "type": "Demo", "code": "C2GEN03", "partner": "Genially", "room": "C2 Software Area", "title": "Scopri Genially: esperienze interattive per una didattica più coinvolgente", "abstract": "Una panoramica introduttiva su Genially per scoprire come creare esperienze interattive in modo semplice e immediato. Attraverso esempi concreti e l’esperienza degli ambassador educativi, esploreremo nuovi modi di comunicare e coinvolgere la classe in ogni ordine e grado.", "link": "https://exhibitor.fieradidacta.it/eventi/scopri_genially_esperienze_interattive_per_una_didattica_piu_coinvolgente_c2gen03", "capacity": 6, "enrolled": 0}, {"date": "2026-03-12", "time": "11:30", "type": "Workshop", "code": "C2AGOR06", "partner": "Google for Education", "room": "C2 Agorà", "title": "Rete DigitalMente NOI L’intelligenza Artificiale fa scuola a Brescia e nel mondo", "abstract": "Come portare l'IA a scuola? Scopri il progetto della Rete DigitalMente NOI, C2 e Google for Education, che ha guidato 79 istituti e oltre 4000 persone nell'adozione di Google AI Pro per Dirigenti Scolastici, DSGA, amministrativi e docenti. Condivideremo strategie e risultati concreti per ispirare dirigenti e docenti, fornendo le chiavi pratiche per replicare questo modello di successo nelle proprie realtà. Unisciti a noi per guidare insieme la scuola verso il futuro!", "link": "https://exhibitor.fieradidacta.it/eventi/rete_digitalmente_noi_lintelligenza_artificiale_fa_scuola_a_brescia_e_nel_mondo_c2agor06", "capacity": 30, "enrolled": 0}, {"date": "2026-03-12", "time": "11:30", "type": "Workshop", "code": "C2GOG06", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Google AI per la Governance: Gemini e NotebookLM per Dirigenti e DSGA. Strategie ed efficienza per scuola complessa", "abstract": "La gestione scolastica richiede velocità. In un laboratorio operativo di un'ora, scopri come l'AI di Google diventa il tuo miglior alleato. Attraverso tre stazioni di lavoro vedrai: NotebookLM analizzare complessi decreti e bandi PNRR; Gemini in Workspace automatizzare la stesura di circolari e dati di bilancio; Gemini Chatbot supportare strategie e comunicazioni istituzionali. Riduci drasticamente il carico burocratico e guadagna efficienza immediata.", "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_per_la_governance_gemini_e_notebooklm_per_dirigenti_e_dsga_strategie_ed_efficienza_per_scuola_complessa_c2gog06", "capacity": 20, "enrolled": 0}, {"date": "2026-03-12", "time": "11:30", "type": "Visita Guidata", "code": "C2KAIR06", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair06", "capacity": 8, "enrolled": 0}, {"date": "2026-03-12", "time": "11:30", "type": "Workshop", "code": "C2LEG06", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Camerieri robot in azione col kit LEGO®️ Education Scienze", "abstract": "In un ristorante LEGO Education Science, progetteremo robot per trasportare sushi e torte attraverso porte, rispettando criteri e vincoli. Costruiremo, sperimenteremo soluzioni, le condivideremo e le collegheremo l’esperienza a tecnologie reali, sviluppando creatività, problem solving e competenze STEM in modo pratico, divertente e coinvolgente.", "link": "https://exhibitor.fieradidacta.it/eventi/camerieri_robot_in_azione_col_kit_lego_education_scienze_c2legm06", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "11:30", "type": "Workshop", "code": "C2ROB06", "partner": "Arduino", "room": "C2 Robotica", "title": "Arduino Alvik: Il Robot che \"Cresce\" con i tuoi Studenti", "abstract": "Dimenticate i robot fragili e complicati. Arduino Alvik è la piattaforma mobile definitiva: robusta, intelligente e pronta all'uso. In questo workshop esploreremo come insegnare la robotica autonoma usando i sensori di distanza, colore e movimento integrati. Vedremo come passare con naturalezza dalla programmazione a blocchi a MicroPython, preparando gli studenti alle sfide reali dell'automazione moderna con uno strumento che non si ferma mai.", "link": "https://exhibitor.fieradidacta.it/eventi/arduino_alvik_il_robot_che_cresce_con_i_tuoi_studenti_c2rob06", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "11:30", "type": "Workshop", "code": "C2SFTW05", "partner": "ThingLink", "room": "C2 Software Area", "title": "Oltre l’aula: progettare ecosistemi interattivi con ThingLink per laboratori professionalizzanti innovativi", "abstract": "Crea simulazioni immersive e tour 360° per laboratori all'avanguardia. Un ponte tra digitale e pratica professionale.", "link": "https://exhibitor.fieradidacta.it/eventi/oltre_laula_progettare_ecosistemi_interattivi_con_thinglink_per_laboratori_professionalizzanti_innovativi_c2sftw05", "capacity": 10, "enrolled": 0}, {"date": "2026-03-12", "time": "12:00", "type": "Demo", "code": "C2DEL03", "partner": "Delightex Edu", "room": "C2 Software Area", "title": "AI Buddy: il Narratore di storie", "abstract": "-", "link": "https://exhibitor.fieradidacta.it/eventi/ai_buddy_il_narratore_di_storie_c2del03", "capacity": 6, "enrolled": 0}, {"date": "2026-03-12", "time": "13:30", "type": "Workshop", "code": "C2EXT02", "partner": "Genially", "room": "E16 Cavedio - Pad.Spadolini Inferiore", "title": "Genially: un clic per attivare l’esperienza in aula", "abstract": "Nel Centro TOG di Milano, dove si curano gratuitamente bambini con disabilità neurologiche complesse, la Stanza Immersiva Ulisse trasforma la terapia in un viaggio di luci, suoni e immagini. È uno spazio senza muri, dove gioco e riabilitazione si intrecciano stimolando risposte motorie, cognitive ed espressive. Un’esperienza che parla anche alle scuole: inclusione, relazione e nuove possibilità educative", "link": "https://exhibitor.fieradidacta.it/eventi/genially_un_clic_per_attivare_lesperienza_in_aula", "capacity": 40, "enrolled": 0}, {"date": "2026-03-12", "time": "14:30", "type": "Workshop", "code": "C2AGOR07", "partner": "CIOFS", "room": "C2 Agorà", "title": "CIOFS AI PRO - il progetto nazionale di CIOFS", "abstract": "Scopri CIOFS AI PRO, il progetto nazionale che guida l'adozione dell'IA. Oltre 400 professionisti delle sedi regionali CIOFS FP stanno sperimentando con successo Google AI Pro. In questo incontro esploreremo il modello di adozione su larga scala, condividendo strategie e risultati concreti. L'obiettivo? Fornire a reti, scuole e dirigenti gli strumenti pratici per replicare questo format e integrare efficacemente l'Intelligenza Artificiale nelle proprie realtà.", "link": "", "capacity": 30, "enrolled": 0}, {"date": "2026-03-12", "time": "14:30", "type": "Workshop", "code": "C2GOG07", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Google AI Experience -  3 tappe per il futuro della didattica: Workshop immersivo a rotazione su Gemini e NotebookLM", "abstract": "Vuoi potenziare il tuo insegnamento con l'AI? Partecipa al nostro laboratorio interattivo. Tre tappe da 15 minuti per padroneggiare l'ecosistema Google AI: usa NotebookLM come assistente allo studio inclusivo, sfrutta Gemini in Workspace per generare materiali in un attimo e dialoga con il Chatbot per ideare lezioni innovative. Un'esperienza operativa per acquisire subito strumenti reali. Conclusione con Q&A e bundle speciali per le scuole.", "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_experience_3_tappe_per_il_futuro_della_didattica_workshop_immersivo_a_rotazione_su_gemini_e_notebooklm_c2gog07", "capacity": 20, "enrolled": 0}, {"date": "2026-03-12", "time": "14:30", "type": "Visita Guidata", "code": "C2KAIR07", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair07", "capacity": 8, "enrolled": 0}, {"date": "2026-03-12", "time": "14:30", "type": "Workshop", "code": "C2LEG07", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "L’energia si trasforma e gli oggetti prendono vita con il kit LEGO®️ Education SPIKE Essential", "abstract": "In questo workshop dedicato alla scuola primaria ci divertiremo testando le nostre conoscenze sull’energia e le sue trasformazioni. Cercheremo soluzioni alternative per migliorare le prestazioni del nostro artefatto e collaboreremo tra noi per testare nuove funzioni!", "link": "https://exhibitor.fieradidacta.it/eventi/lenergia_si_trasforma_e_gli_oggetti_prendono_vita_con_il_kit_lego_education_spike_essential_c2leg07", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "14:30", "type": "Workshop", "code": "C2ROB07", "partner": "Arduino", "room": "C2 Robotica", "title": "Arduino UNO Q: Scatena la Potenza dell'Intelligenza Artificiale nel tuo Laboratorio", "abstract": "Pensavate che Arduino avesse dei limiti? Con la UNO Q li abbiamo abbattuti tutti. Unitevi a noi per scoprire come integrare IoT e Intelligenza Artificiale nelle vostre lezioni senza impazzire. Questo workshop è una masterclass di potenza pura: imparerete a guidare gli studenti nella creazione di sistemi intelligenti che \"pensano\" e comunicano in tempo reale. È il momento di alzare l'asticella del vostro laboratorio e preparare la classe alle sfide tecnologiche che contano davvero.", "link": "https://exhibitor.fieradidacta.it/eventi/arduino_uno_q_scatena_la_potenza_dellintelligenza_artificiale_nel_tuo_laboratorio_c2rob07", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "14:30", "type": "Workshop", "code": "C2SFTW06", "partner": "Verse", "room": "C2 Software Area", "title": "Avatar tutor in laboratorio - ZenkAI osserva lo stream e guida i gruppi passo-passo", "abstract": "Workshop dimostrativo per didattica tecnica: l’avatar AI “vede” lo stream del banco e offre suggerimenti step-by-step, troubleshooting e richiami di sicurezza, adattati ai gruppi. Mostriamo monitoraggio progressi, feedback immediati e gestione della lezione in tempo reale. \nFinale con un piccolo gioco a premi: licenze ZenkAI in regalo ai vincitori.", "link": "https://exhibitor.fieradidacta.it/eventi/avatar_tutor_in_laboratorio_zenkai_osserva_lo_stream_e_guida_i_gruppi_passopasso_c2sftw06", "capacity": 10, "enrolled": 0}, {"date": "2026-03-12", "time": "15:00", "type": "Demo", "code": "C2GEN04", "partner": "Genially", "room": "C2 Software Area", "title": "Genially Experience: scopri le novità e vivile nella Challenge live", "abstract": "Le novità di Genially protagoniste: nuovi widget e funzionalità potenziate dall’AI per creare con maggiore velocità e impatto. La sessione si conclude con una Challenge live, momento interattivo per sperimentare le nuove funzionalità e aggiudicarsi gadget Genially.", "link": "https://exhibitor.fieradidacta.it/eventi/genially_experience_scopri_le_novita_e_vivile_nella_challenge_live_c2gen04", "capacity": 6, "enrolled": 0}, {"date": "2026-03-12", "time": "16:00", "type": "Workshop", "code": "C2AGOR08", "partner": "-", "room": "C2 Agorà", "title": "Le emozioni al centro della scuola", "abstract": "i piacerebbe una scuola in cui l’apprendimento socio-emotivo si fonda su spazi, contenuti, relazioni, formazione e tecnologie? Una scuola flessibile e inclusiva, dove ambienti e strumenti, analogici e digitali, favoriscono crescita, benessere e cura della persona. Vieni a scoprirla insieme al Gruppo Editoriale La Scuola, C2 Group, Didattica delle Emozioni, alla Rete Nazionale per l’Educazione Emotiva e alla Libera Università di Bolzano.", "link": "https://exhibitor.fieradidacta.it/eventi/le_emozioni_al_centro_della_scuola_c2agor08", "capacity": 30, "enrolled": 0}, {"date": "2026-03-12", "time": "16:00", "type": "Workshop", "code": "C2GOG08", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Didattica Generativa con i Chromebook: Gems e Class Tools al servizio della scuola", "abstract": "L'idea non è fare una lezione teorica, ma una simulazione dal vivo che mostri la potenza dell'ecosistema Google (Gemini + Classroom + Chromebook) in azione. Il focus è mostrare come Gemini Gems e Chromebook permettono un'attività di investigazione digitale attiva, inclusiva per i BES e perfettamente integrata con Classroom e Presentazioni.", "link": "https://exhibitor.fieradidacta.it/eventi/didattica_generativa_con_i_chromebook_gems_e_class_tools_al_servizio_della_scuola_c2gog08", "capacity": 20, "enrolled": 0}, {"date": "2026-03-12", "time": "16:00", "type": "Visita Guidata", "code": "C2KAIR08", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair08", "capacity": 8, "enrolled": 0}, {"date": "2026-03-12", "time": "16:00", "type": "Workshop", "code": "C2LEG08", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Nuovo LEGO®️ Education Informatica & IA: scopri in anteprima l’esperienza STEM più attesa dell’anno!", "abstract": "Sei pronto a scoprire il nuovo LEGO®️ Education Informatica & IA? Esploreremo cosa si può fare in classe, con attività pratiche e funzionalità innovative che introducono coding, dati e concetti di intelligenza artificiale con un approccio hands-on. Unisciti a noi per una sessione interattiva che ti mostrerà come portare sperimentazione e creatività nelle tue classi con il kit più atteso dell'anno!", "link": "https://exhibitor.fieradidacta.it/eventi/nuovo_lego_education_informatica_ia_scopri_in_anteprima_lesperienza_stem_piu_attesa_dellanno_c2leg08", "capacity": 12, "enrolled": 0}, {"date": "2026-03-12", "time": "17:00", "type": "Demo", "code": "C2DEL04", "partner": "Delightex Edu", "room": "C2 Software Area", "title": "Escape Room Malpelo AI: \"Il Labirinto di Sabbia Rossa", "abstract": "L' escape Room Malpelo AI : \"Il Labirinto di Sabbia Rossa\" è stata progettata per studenti di 12-13 anni. L'esperienza trasforma la novella di Verga in un percorso interattivo di 30-40 minuti, dove l'obiettivo è fuggire dalla cava risolvendo 12 enigmi distribuiti in tre scene chiave", "link": "https://exhibitor.fieradidacta.it/eventi/escape_room_malpelo_ai_il_labirinto_di_sabbia_rossa_c2del04", "capacity": 6, "enrolled": 0}, {"date": "2026-03-13", "time": "10:00", "type": "Seminario", "code": "C2AGOR09", "partner": "DSGA Online", "room": "C2 Agorà", "title": "Rdo Evoluta e la corretta gestione del Progetto Laboratori Professionalizzanti", "abstract": "Seminario operativo dedicato alla RDO evoluta e alla corretta gestione del progetto dei Laboratori Professionalizzanti. Saranno analizzate le soglie e tutte le  fasi di progettazione, predisposizione degli atti di gara e gestione della procedura su piattaforma MEPA , con particolare attenzione alla selezione degli operatori econimici da invitare , studieremo lo strumento rdo evoluta di mepa.", "link": "https://exhibitor.fieradidacta.it/eventi/rdo_evoluta_e_la_corretta_gestione_del_progetto_laboratori_professionalizzanti_c2agor09", "capacity": 30, "enrolled": 0}, {"date": "2026-03-13", "time": "10:00", "type": "Workshop", "code": "C2GOG09", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Google AI per la Governance: Gemini e NotebookLM per Dirigenti e DSGA. Strategie ed efficienza per scuola complessa", "abstract": "La gestione scolastica richiede velocità. In un laboratorio operativo di un'ora, scopri come l'AI di Google diventa il tuo miglior alleato. Attraverso tre stazioni di lavoro vedrai: NotebookLM analizzare complessi decreti e bandi PNRR; Gemini in Workspace automatizzare la stesura di circolari e dati di bilancio; Gemini Chatbot supportare strategie e comunicazioni istituzionali. Riduci drasticamente il carico burocratico e guadagna efficienza immediata.", "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_per_la_governance_gemini_e_notebooklm_per_dirigenti_e_dsga_strategie_ed_efficienza_per_scuola_complessa_c2gog09", "capacity": 20, "enrolled": 0}, {"date": "2026-03-13", "time": "10:00", "type": "Workshop", "code": "C2LEG09", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Alla giusta distanza: matematica e coding con LEGO® Education SPIKE™ Prime", "abstract": "Come trasformare stima, misura e circonferenza in un’esperienza concreta? Nel workshop esploriamo una lezione per la secondaria di I grado con LEGO Education SPIKE Prime: programmare un rinoceronte per fermarsi alla giusta distanza. Tra calcoli, rotazioni e sensori, i docenti sperimenteranno un’attività interdisciplinare che integra matematica, tecnologia e competenze linguistiche, valorizzando problem solving, lavoro cooperativo e valutazione formativa.", "link": "https://exhibitor.fieradidacta.it/eventi/alla_giusta_distanza_matematica_e_coding_con_lego_education_spike_prime_c2leg09", "capacity": 12, "enrolled": 0}, {"date": "2026-03-13", "time": "10:00", "type": "Workshop", "code": "C2ROB09", "partner": "Arduino", "room": "C2 Robotica", "title": "Basta Cavi Scollegati! La Rivoluzione  Arduino \"Plug-and-Play\" entra in Classe", "abstract": "Avete mai passato metà lezione a cercare un contatto difettoso sulla breadboard? Con il nuovo Plug-and-Make Kit, l'elettronica diventa finalmente \"a prova di studente\". In questo workshop pratico vedremo come il sistema Modulino™ permetta di creare progetti funzionanti in pochi secondi, senza errori di cablaggio. Trasformeremo l'aula in un laboratorio di innovazione immediata, dove l'unico limite è la fantasia, non i cavetti interrotti.", "link": "https://exhibitor.fieradidacta.it/eventi/basta_cavi_scollegati_la_rivoluzione_arduino_plugandplay_entra_in_classe_c2rob09", "capacity": 12, "enrolled": 0}, {"date": "2026-03-13", "time": "10:00", "type": "Workshop", "code": "C2SFTW07", "partner": "Adobe", "room": "C2 Software Area", "title": "Acrobat Studio: dal PDF a quiz, guide e versioni semplificate per la formazione post-diploma", "abstract": "In ambito scolastico post-diploma capita spesso di avere a che fare con documenti lunghi o complessi: dispense, articoli, regolamenti, contenuti in PDF. In questa demo vedremo come Acrobat Studio può analizzare il PDF, estrarre i punti chiave e rielaborare le informazioni in formati più utili per lo studio e la verifica: riassunti strutturati, guide allo studio, domande e quiz, versioni semplificate e traduzioni. Un flusso pratico per trasformare un documento “pesante” in materiali chiari, pronti per l’uso didattico.", "link": "https://exhibitor.fieradidacta.it/eventi/acrobat_studio_dal_pdf_a_quiz_guide_e_versioni_semplificate_per_la_formazione_postdiploma_c2sftw07", "capacity": 10, "enrolled": 0}, {"date": "2026-03-13", "time": "10:30", "type": "Demo", "code": "C2DEL05", "partner": "Delightex Edu", "room": "C2 Software Area", "title": "Pronto, qui 1917\": dialoghi impossibili nel Metaverso", "abstract": "-", "link": "https://exhibitor.fieradidacta.it/eventi/pronto_qui_1917_dialoghi_impossibili_nel_metaverso_c2del05", "capacity": 6, "enrolled": 0}, {"date": "2026-03-13", "time": "10:30", "type": "Workshop", "code": "C2EXT03", "partner": "TOG", "room": "E16 Cavedio - Pad.Spadolini Inferiore", "title": "Ulisse: un viaggio immersivo per bambini con disabilità complessa", "abstract": "In un tempo in cui la scuola è chiamata a rispondere a sfide sempre più complesse — tra carichi di lavoro crescenti, richieste emotive continue e trasformazioni digitali — prendersi cura del proprio benessere non è più un’opzione, ma una necessità strategica. Questo workshop rappresenta un’occasione per scoprire come lo Stress si insinua nella quotidianità scolastica influenzando pensieri, emozioni e relazioni.", "link": "https://exhibitor.fieradidacta.it/eventi/ulisse_un_viaggio_immersivo_per_bambini_con_disabilita_complessa_c2ext03", "capacity": 40, "enrolled": 0}, {"date": "2026-03-13", "time": "11:00", "type": "Demo", "code": "C2GEN05", "partner": "Genially", "room": "C2 Software Area", "title": "Scopri Genially: esperienze interattive per una didattica più coinvolgente", "abstract": "Una panoramica introduttiva su Genially per scoprire come creare esperienze interattive in modo semplice e immediato. Attraverso esempi concreti e l’esperienza degli ambassador educativi, esploreremo nuovi modi di comunicare e coinvolgere la classe in ogni ordine e grado.", "link": "https://exhibitor.fieradidacta.it/eventi/scopri_genially_esperienze_interattive_per_una_didattica_piu_coinvolgente_c2gen05", "capacity": 6, "enrolled": 0}, {"date": "2026-03-13", "time": "11:30", "type": "Workshop", "code": "C2AGOR10", "partner": "Google for Education", "room": "C2 Agorà", "title": "Trasformare la scuola con le comunità Google ELP Leader & Admin: riuniamoci per fare rete", "abstract": "La trasformazione digitale non si fa da soli, ma attraverso la visione, il confronto e in rete. In questo workshop sarà possibile incontrare i Facilitator dei circoli italiani ELP Leader e Admin che, insieme ai partner, sono a supporto delle scuole nel processo di innovazione. Saranno mostrate, inoltre, tutte le iniziative territoriali volte a rendere gli obiettivi della mission realizzabili.", "link": "https://exhibitor.fieradidacta.it/eventi/trasformare_la_scuola_con_le_comunita_google_elp_leader_admin_riuniamoci_per_fare_rete_c2agor10", "capacity": 30, "enrolled": 0}, {"date": "2026-03-13", "time": "11:30", "type": "Demo", "code": "C2DEL06", "partner": "Delightex Edu", "room": "C2 Software Area", "title": "Donne in un palmo di mano", "abstract": "Realizzazione di un Merge Cube dedicato a figure femminili che hanno lasciato un segno significativo nella storia in diversi ambiti disciplinari: arte, scienza, moda, danza e innovazione. L’attività si configura come un percorso STEM integrato, in cui tecnologia, ricerca storica e competenze digitali si intrecciano con l’educazione civica e l’orientamento.", "link": "https://exhibitor.fieradidacta.it/eventi/donne_in_un_palmo_di_mano_c2del06", "capacity": 6, "enrolled": 0}, {"date": "2026-03-13", "time": "11:30", "type": "Workshop", "code": "C2EXT04", "partner": "Chiara Celino", "room": "E16 Cavedio - Pad.Spadolini Inferiore", "title": "A SCUOLA DI-STRESS...perché lo Stress non è in orario ma entra in servizio ogni giorno", "abstract": "Come ricorda il proverbio: “Non posso cambiare il mondo, ma gli occhi con cui lo guardo\".", "link": "https://exhibitor.fieradidacta.it/eventi/a_scuola_distressperche_lo_stress_non_e_in_orario_ma_entra_in_servizio_ogni_giorno", "capacity": 40, "enrolled": 0}, {"date": "2026-03-13", "time": "11:30", "type": "Workshop", "code": "C2GOG10", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Google AI Experience - 3 tappe per il futuro della didattica: Workshop immersivo a rotazione su Gemini e NotebookLM", "abstract": "Vuoi potenziare il tuo insegnamento con l'AI? Partecipa al nostro laboratorio interattivo. Tre tappe da 15 minuti per padroneggiare l'ecosistema Google AI: usa NotebookLM come assistente allo studio inclusivo, sfrutta Gemini in Workspace per generare materiali in un attimo e dialoga con il Chatbot per ideare lezioni innovative. Un'esperienza operativa per acquisire subito strumenti reali. Conclusione con Q&A e bundle speciali per le scuole.", "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_experience_3_tappe_per_il_futuro_della_didattica_workshop_immersivo_a_rotazione_su_gemini_e_notebooklm_c2gog10", "capacity": 20, "enrolled": 0}, {"date": "2026-03-13", "time": "11:30", "type": "Workshop", "code": "C2LEG10", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Taxi! Taxi!: coding, mappe e debug nella scuola primaria con LEGO® Education SPIKE™ Essential", "abstract": "Come introdurre coding, geometria e pensiero computazionale alla primaria in modo coinvolgente? Nel workshop sperimenteremo “Taxi! Taxi!” con LEGO Education SPIKE Essential: guidare un taxi lungo una mappa, modificare percorsi e fare debug. Un’attività interdisciplinare che integra italiano, matematica e tecnologia, sviluppando collaborazione, problem solving e riflessione sugli errori come opportunità di apprendimento.", "link": "https://exhibitor.fieradidacta.it/eventi/taxi_taxi_coding_mappe_e_debug_nella_scuola_primaria_con_lego_education_spike_essential_c2leg010", "capacity": 12, "enrolled": 0}, {"date": "2026-03-13", "time": "11:30", "type": "Workshop", "code": "C2ROB10", "partner": "Arduino", "room": "C2 Robotica", "title": "Arduino Alvik: Il Robot che \"Cresce\" con i tuoi Studenti", "abstract": "Dimenticate i robot fragili e complicati. Arduino Alvik è la piattaforma mobile definitiva: robusta, intelligente e pronta all'uso. In questo workshop esploreremo come insegnare la robotica autonoma usando i sensori di distanza, colore e movimento integrati. Vedremo come passare con naturalezza dalla programmazione a blocchi a MicroPython, preparando gli studenti alle sfide reali dell'automazione moderna con uno strumento che non si ferma mai.", "link": "https://exhibitor.fieradidacta.it/eventi/arduino_alvik_il_robot_che_cresce_con_i_tuoi_studenti_c2rob10", "capacity": 12, "enrolled": 0}, {"date": "2026-03-13", "time": "11:30", "type": "Workshop", "code": "C2SFTW08", "partner": "ThingLink", "room": "C2 Software Area", "title": "Oltre l’aula: progettare ecosistemi interattivi con ThingLink per laboratori professionalizzanti innovativi", "abstract": "Crea simulazioni immersive e tour 360° per laboratori all'avanguardia. Un ponte tra digitale e pratica professionale.", "link": "https://exhibitor.fieradidacta.it/eventi/oltre_laula_progettare_ecosistemi_interattivi_con_thinglink_per_laboratori_professionalizzanti_innovativi_c2sftw08", "capacity": 10, "enrolled": 0}, {"date": "2026-03-13", "time": "12:00", "type": "Visita Guidata", "code": "C2KAIR09", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair09", "capacity": 8, "enrolled": 0}, {"date": "2026-03-13", "time": "14:30", "type": "Workshop", "code": "C2AGOR11", "partner": "Okulus Scuola Sicura", "room": "C2 Agorà", "title": "Gestire le segnalazioni di guasti e manutenzione con Okulus Scuola Sicura", "abstract": "Okulus Scuola Sicura genera segnalazioni delle criticità in tempo reale, documentando l’intero iter fino al ripristino. Riduce i rischi di infortuni e tutela il Dirigente ai sensi dell’Art. 18 comma 3.1 D.Lgs. 81/2008, garantendo la prova della tempestiva richiesta d'intervento e l'esonero da responsabilità civili e penali. Programma ispezioni periodiche su elementi critici con Check-list Proattive. Formazione: Scadenziario Automatizzato Notifiche via e-mail per corsi scaduti o in scadenza.", "link": "https://exhibitor.fieradidacta.it/eventi/gestire_le_segnalazioni_di_guasti_e_manutenzione_con_okulus_scuola_sicura_c2agor11", "capacity": 30, "enrolled": 0}, {"date": "2026-03-13", "time": "14:30", "type": "Workshop", "code": "C2ARD11", "partner": "Arduino", "room": "C2 Robotica", "title": "Arduino UNO Q: Scatena la Potenza dell'Intelligenza Artificiale nel tuo Laboratorio", "abstract": "Pensavate che Arduino avesse dei limiti? Con la UNO Q li abbiamo abbattuti tutti. Unitevi a noi per scoprire come integrare IoT e Intelligenza Artificiale nelle vostre lezioni senza impazzire. Questo workshop è una masterclass di potenza pura: imparerete a guidare gli studenti nella creazione di sistemi intelligenti che \"pensano\" e comunicano in tempo reale. È il momento di alzare l'asticella del vostro laboratorio e preparare la classe alle sfide tecnologiche che contano davvero.", "link": "https://exhibitor.fieradidacta.it/eventi/arduino_uno_q_scatena_la_potenza_dellintelligenza_artificiale_nel_tuo_laboratorio_c2rob11", "capacity": 12, "enrolled": 0}, {"date": "2026-03-13", "time": "14:30", "type": "Demo", "code": "C2GEN06", "partner": "Genially", "room": "C2 Software Area", "title": "Genially Experience: scopri le novità e vivile nella Challenge live", "abstract": "Le novità di Genially protagoniste: nuovi widget e funzionalità potenziate dall’AI per creare con maggiore velocità e impatto. La sessione si conclude con una Challenge live, momento interattivo per sperimentare le nuove funzionalità e aggiudicarsi gadget Genially.", "link": "https://exhibitor.fieradidacta.it/eventi/genially_experience_scopri_le_novita_e_vivile_nella_challenge_live_c2gen06", "capacity": 6, "enrolled": 0}, {"date": "2026-03-13", "time": "14:30", "type": "Workshop", "code": "C2GOG11", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Lezione Inclusiva: Superpoteri Google Edu Plus. Dai video ai Class Tools, un workshop immersivo pratico a rotazione.", "abstract": "La didattica digitale evolve con Education Plus. Partecipa al laboratorio per testare tre strumenti chiave: Lezione Attiva: trasforma i video in quiz e potenzia la lettura con l'AI.  Esercizi Guidati: automatizza le correzioni e ottieni dati immediati sulla classe. Regia di Classe: controlla gli schermi degli studenti e guida la navigazione in tempo reale.\nRiduci il carico di lavoro e trasforma ogni lezione in un'esperienza inclusiva.", "link": "https://exhibitor.fieradidacta.it/eventi/lezione_inclusiva_superpoteri_google_edu_plus_dai_video_ai_class_tools_un_workshop_immersivo_pratico_a_rotazione_c2gog11", "capacity": 20, "enrolled": 0}, {"date": "2026-03-13", "time": "14:30", "type": "Visita Guidata", "code": "C2KAIR10", "partner": "Zebra Multimedia", "room": "Kairos - L'aula delle Connessioni", "title": "Dall’Esperienza Ulisse a Kairos – Visita guidata al nuovo modello di didattica immersiva che riprogetta gli spazi per l’inclusione", "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.", "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair010", "capacity": 8, "enrolled": 0}, {"date": "2026-03-13", "time": "14:30", "type": "Workshop", "code": "C2LEG11", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "La mucca sul tetto: valutare soluzioni col kit LEGO®️ Education Scienze", "abstract": "Affronteremo la sfida della mucca sul tetto costruendo ascensori e pareti da arrampicata LEGO. Valuteremo soluzioni, scopriremo criteri e vincoli e confronteremo i risultati con metodo sistematico. Un’attività divertente e pratica che stimola creatività, problem solving e ragionamento STEM, trasformando un problema “impossibile” in esperienza di apprendimento reale.", "link": "https://exhibitor.fieradidacta.it/eventi/la_mucca_sul_tetto_valutare_soluzioni_col_kit_lego_education_scienze_c2leg011", "capacity": 12, "enrolled": 0}, {"date": "2026-03-13", "time": "14:30", "type": "Workshop", "code": "C2SFTW09", "partner": "Verse", "room": "C2 Software Area", "title": "Lezione tecnica in diretta con ZenkAI: visione dello stream", "abstract": "Una lezione completa in modalità live: avvio stream dal laboratorio, interazione con avatar AI che osserva e commenta le attività degli studenti, supportando spiegazione e correzione in tempo reale. Il docente controlla tempi, gruppi e criteri di valutazione.\nConclusione con un piccolo gioco a premi: licenze ZenkAI omaggio ai vincitori del giorno.", "link": "https://exhibitor.fieradidacta.it/eventi/lezione_tecnica_in_diretta_con_zenkai_visione_dello_stream_c2sftw09", "capacity": 10, "enrolled": 0}, {"date": "2026-03-13", "time": "15:30", "type": "Workshop", "code": "C2GOG12", "partner": "Google for Education", "room": "C2 Google Area powered by Acer", "title": "Didattica Generativa con i Chromebook: Gems e Class Tools al servizio della scuola", "abstract": "L'idea non è fare una lezione teorica, ma una simulazione dal vivo che mostri la potenza dell'ecosistema Google (Gemini + Classroom + Chromebook) in azione. Il focus è mostrare come Gemini Gems e Chromebook permettono un'attività di investigazione digitale attiva, inclusiva per i BES e perfettamente integrata con Classroom e Presentazioni.", "link": "https://exhibitor.fieradidacta.it/eventi/didattica_generativa_con_i_chromebook_gems_e_class_tools_al_servizio_della_scuola_c2gog012", "capacity": 20, "enrolled": 0}, {"date": "2026-03-13", "time": "15:30", "type": "Workshop", "code": "C2LEG12", "partner": "LEGO® Education", "room": "C2 STEAM", "title": "Nuovo LEGO®️ Education Informatica & IA: scopri in anteprima l’esperienza STEM più attesa dell’anno!", "abstract": "Sei pronto a scoprire il nuovo LEGO®️ Education Informatica & IA? Esploreremo cosa si può fare in classe, con attività pratiche e funzionalità innovative che introducono coding, dati e concetti di intelligenza artificiale con un approccio hands-on. Unisciti a noi per una sessione interattiva che ti mostrerà come portare sperimentazione e creatività nelle tue classi con il kit più atteso dell'anno!", "link": "https://exhibitor.fieradidacta.it/eventi/nuovo_lego_education_informatica_ia_scopri_in_anteprima_lesperienza_stem_piu_attesa_dellanno_c2leg012", "capacity": 12, "enrolled": 0}];
+
+// ════════════════════════════════════════════════
+// PARTNER LOGOS
+// ════════════════════════════════════════════════
+const PARTNER_LOGOS = {
+  'Adobe': 'data:image/png;base64,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',
+  'AID': 'data:image/png;base64,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',
+  'Arduino': 'data:image/png;base64,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',
+  'Bullismo No Grazie': 'data:image/png;base64,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',
+  'C2 Group': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAAAzCAYAAACaEpqBAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAUG0lEQVR4nO2cyZMk13nYf2/JpbKqq3qZfemZnoXALNghAJJAUTQt2AxKEQodFLR9cdgR/nd88cERPviukxQy5SAp0qBAkR6KAAmAmOEMgFkajdm7q7q23N57nw/ZmO5mAKLtENATQv0uHVP58i35vvnet2XCjBkzZsyYMWPGjBkzZsyYMWPGjBkzZsyYMeOLR+31BD6VzmlBJeD81g8BJADS/FNrEA3Bg6qhWFUkpwQdgbJNGwtIBaP3H881fgl4vB78yu/I3PIF7MIxvO0QTIwxBoJDXIWSGoIg0giZUobgKiKbIMZSixBQaAQtDl1PqTbvkz/8CLn8vcdrrV8CHo8HfvpVWXryRdIDp2D+GBPVZhoiVBRT5QVGB1KtiG0z4do5QIONCSoBbTDiCL5EvMcojwKUr4mosfWY/upV8o9+DVf/AcrVx2Pd/8yxez0Bjn5Vsme/SW/lSUYSkUuLUsU4BOUcWZYidUGQQOE1tWjqYEAnoFPwQFWCL4lVRawETyDoCEyLynbJ5g7SzfbRWTrCg8EAVlf3etVfCvZeuJ77I+pDT3E/tHCuIouFVEZQDWmZmsR76mqK9wZJ5yjjRTZNi5oIJLAY11A/IPEj5uJArDx57RjXMWU0x6CMKVyHRCKWDp5k4dlX6N+/IRTXZ9rrc2Zvhav3hOw/+yzr6SEmZU6mK9TgFg/f/glceasx1r0DAxw8yvyZC8wtX0R3jtBXutFYGzfZuPomfHiZO5vrjeGvDSwdgIPLzD/7B5h2ynphMcawdOI8/QPLsHp9T5f+ZWBPhat17ikmLqCMJY4sdn2D9e/8d5iuwfjWbs0yusrggx8yOPU1WX75NQ4cOI8vx9z9zn+D6V0Y/oYdNQFWYfDBJVn81n8gPvh7jFWGkikcfwJWX//iFvolRe/l4LWKMEkL7z3kQzZvvQd3/l6xuS1Yvae/Ifb0K/Lopus/Ug/e/wVJPWF99Trc/Zl6JFhzJ6V7+g9l1yD9K2rjyiW0yxFjyYMFk31BK/xys6fCBSBoKKckdR/WLu+61n3p38jBl/6U7vmv7fo9v/cxOu1QP+xD+2QjTJ1TsvzKa5z5g2/Re/nf7Rawj66T6Qktk6O0A2M+30XNAPZcuAQlFYSCuUhgurl9qXNWWkfO4BZXKLrHoH1uW2BsizwoKAP4aKurLpPuUeruARZPnN49TBSTaod2QxIr4KovYG2fQeuk/PZG/zzYU5vL4EilwCtFHMcgO6ZTexyau4MJU92Fo09DOCnEESwdp5+X0O3BygVQ5wTXYz09SMvDYP3hrnHUvkOEKsdpRTe2jKr8syeVXBBEgyqhvPbZHmXnKWmihEMY3frsdq2TggYmN7fadCC7KEx/9en3xMtC9X8Zh8u+ImgHVmBw47HzfvdUuLSA8g6thcoHflORKq1J5xZID/UICxlxPSQ2mmAziuww5vkuh/xZxuMxw4XTxK2IZLLK+P13tjuJT0nvyBmKEABPHMWAQHJSKG9ub8iTr0n71DOcOLKCVjEu0mg/lVvvXcLdu0n5/hsKIH3mj6Vo7yPKDpK1Ilp6k8l4Q3KvCJubhA+vwnCHUB44TXr+aU4e3S9KGRwZEgy31z6U6bU3oX8DBrfU4qt/Jt2lwyhvuHPtHSmuvd70cf7rcugrz2LrKbc/vEz49RsqufC7kh64QEg6ZO2UejIkqysZ9zcZbAxhsAaD9/Zc2PZUuAKaKijEJlTlGOyO6SiPsYphUVJJSS9bwPuEaV0zlYhiKhDNA1CmPaLuYarxXe5fexNWf7z9YE+eIzr6JNO4h9EGXA3Ggo62xzrxtGQvvkbn+EVEaj66fZup6tLpHmTfS4v425dZe/8NAMzZ51g8fpHYtmiFGjP+mG6a8SA6THCCWv4lg59+V7j/huL0N+TgN/8901aPQZhi6goVEjAZrfOnmTvzIvf+6r9AbcQdOEt0/CyxCO7+ve25LZ6k++TL+HGfMCzh/n2ZW7lIcvxFXLJAbDTThw/IFvcxr2P2e81o7V3u/vC/Cht7m4nY+yCqsihjCR6Idmx4cUuVZSntTpeqhKkTWiahFqE2KcRzoCIm2hAljnw0xG6sUf3s9V3dJ+deIiweBxWjvaOYjiEIhPCojVk6hD64wkAs61ffxL37NixfYHDhKUo0K8dOc+fMy+LX+0xslzLqYIuSQf8OxRvfRZ0+j6zsIzmyzIGvwODquzA8JwunzjGyPeqoy+T2GuHKO+Cg88TzyLGLSAhw4iwMh+Rmgb50aeFwdqc322EY2kzyMUgLQgLJAtNoHjEdNu58SP2rdxntOwoHltm/8iRzJ56GhROwsbeZiD016JVShOAQEaIoAue2LyYnxFpLVVWoNCWEgPcepRQiAZUkIELQGu9rDugR1ff/Avxwu48Xvy3JytOsV5ZCEmoPlgi8B6kfNdu3/ARRmiH5Ou7tv4W7P4e3/oZ4cJNeLEynU3oL+6B0YBNcWdKJPMWlH8Cd95BL/xPtN3HTh0zLERzc33ikWQelDVE+JnzwC3jn+/Du96iv/xRTrmO1RzsBb4EOngwnCahkx0NKcLUlbS2B7kBtMZKi9BzaOepLfwPvvwG//D5plDOYDhmJIV468flv4G9hb71FFUitxRVTEA9qhxa3ET40AihVQSSOzATaJmDrKTJ4CPUUqglRuc7Dt74HkzUYbBnXK/9SFl75JuXcAUjaCAarLDbOIG6x02iuVEpwngyHljGMryvcPdqDG7SLDVqhIjEaRIEEep02FoEARCloTbi/StvkpCqHwX0wCTqdB4mxAdr1BPIPFdV1lYYhqIqgAgppKokkQiTGK7W7nMCDEo1gAQOiUEERlMZIgDCG/IqiWsf6MUYFyrpCmx2nwB6xxwZ9INYeyafYNDR1Wp+gIioHKghaBWw9JgqOWDmMMuRxDVaRqCnVnSvkP/zP21uSnpX4a9+m3zkFwUJdEIJQlgWl8Y/Kwpq2J0XrDKqKzDvyfEIJML6pNn7+A9n4h0uQtlDDO+A9aTml5R3TiYf2YdCboAL7nzyDdpvMM+bjex+Bt3jJ8JJhRDBhe221sY2yUgFUBeJQeFABUdKkvR5RYqTG42iy9B699VepGspJ00xyYqYkUU2op7RjRfFPvWH/j+yxzaVxErBxglYFhB3HonMYYwi+JOR9xm99j/Hg4+Z/9dJhei/8KzAJiepz/7t/savX+He+Tpg/DqoNlBBr2saitCfUZXMsfoIYwBK8JolaWJM2wgVw57IiOyNsBKS6rrDLoquScpKTZAvs//qfkD//Cvv29+jnfUyxzpV3/x5GD0AtMB4MSA4LWsCpbeHyGESBUlsFkMojNIrQ69AI3SMqNDVOe9ABFATtEO0oMaA60D4rzC1ikzY6ivB4pvn0n3Cf/v/YU+HySjP2Fp31CJMxVDseiEA7iampqYo+1bVLMN6KDfmvy1I7ZVp6Pv7Fj2Hjl9taa/9TcubZ3+eyF8DDaB2FR9rzBC0oqyDaaQ0IWjdlPGXUYiI7jOnWCcEbHp1T7TmSJKH2galorLWkvX0MxkNaWcLd//UTuPlWE9NKz8jyvKXPBFSN+2TIeFm8siQelBKcCqAboXIagqFJ1H+CqkE5vJLGiNHgNDjjmdoW0b/+j9S3bkCWUGRH8QXoOjAtS1g4JfT3rvpjz0MRDkMUZ0w2FUSt7Yvl+you1qXtNyg3b1KNdwQd3RTKKRsf3yW8+dNdfR5/5kWqENjfNgzydRZSoXSO3NVUVYmh2q0ZVEBCRQVMwtbuARx5XrLDJ4gWjlOMNqlvtSVsDJnUNa0kpt3OGNy7w/o7P+HIM+cQ1+Hct/6MK98pYDUWioqy3CTokoCnNkC6LIhGiSH2GqWEMhg8ZkuDagJmu1QbGsUmjbmH0oBp7C9RiLZkB48zCnBysUUWRwwmmwwe3kJuXYbB3pYV7a3NBVgFVRAqOwcHz8CH29eLa3/HsV7EeHCd0c775nqE6ZDq/fcaR2AH3UOHCaoi6d/gWNKiyqdI2sZ3DlJrBeUUXLljkJuqdmPxEUhiIbWweEZaR09y6qV/wQZd5qopY3IGk1+hsjYBR7m5RvnGX8LaO9y+8gPSP/5P1IeWWf7dP+XjuZ/h3/4ppY0obMAT8DY0GslB5DVJHaEUTENM7WNMiDEhIoQEwrYxbrzFiEaLblJdIUaFCBVirKqQwR302i+4d/kO1WCDOvcwWYfB1S93ENVKRYRnWnl03IYjp6D7jDB8WwHcu3JJ3btyafdNnbNy9PwLqCiG1Rs0Ru42733nr8FFW54dYGM48xS83IL5eWwEjXWzjTGaxCiUyyEfwsYHKp87Lg9LReh1iU1MYRIQTaUMUQgsxDWDagPGlxVAsX5fsoMrVEkPrzMwMRJFBCxatjzCyaoiXhYFIBZRqtFUNEevEkhCzWRHDM4rA6KJJGzF5gJKGg1mg2P4+l/CvSu4/od7Lky/yZ6GIiZrt4jqGuUdWM3cyll49VvQfW53cjdaFrJzwspror/x54SjFyiidrNhYbdwUWyC24B6vYl5KYGqgk4LCMQ2Ype72D0jRVHTCznzUm7bY7nn7p37yHRCO9YoEwExylvaOkIN+6C2HJB4WXSxgZ3ew0RAZCGOySc5iW/RqVJ6bmvvq1UlKlBaTREZgrWgPbQigpT03ISUHYl1EzP1Bd1MgZoAOToK1BiUE5g8gMdQsGCvvcXNDZK6oN2CYVEyUrB48RVaK2eQtQ9l4+b7IJ5k8QAcPoFaPAKteQZe0dEGLjyHlWViKaQwCUEpTPBYqUm8o9YRue3B3OFmqUWFVx7UDou5Csx1epgA4+kEFo/BxkSoLJ39x8myDpPNe+R5DjYi1FDWsJT2thPt1aoylNJONWPx4AOII4tjplWFKEXpLUTN62950sHEFgk12jQB3Xq6SXffEjZA0DFkZ4WoDb1FHIpiPIDpEJSnrAskODKtyHX4tCf7WLC3wjW8rj669BNZ/L0l9i8t8nAyYmNSYsw+5k8t0T72LFEU4UzESFl8FIPTuHLCUneewy/8EU45nAG1FdWOpSTxJZnPCQrKuMOGWEK2RD3cIFDvPkmVonCBTquLUxnZ+a8y1QdAddG9Q+R1xUIrJbaaKo4hinA6ZaAU+O1Iej2d4HVE5UwjvK6gygdEsaM/LemevUBx6yZEGa0nnmNU5SzEnrrogylhfRWOHGNISpUehYXzkKa0Dq/Q7fZglDcZDGWJoog5K6RVDu6xVFrAXgsXwLWfszG/wL6zT3BoaT++02ZUVpQSYefmmdaBKnh8UUBLk1mLEUc1XAetKWyLwsR4mo32UiPkKKVReEovgEA+wnhHOxYGabR9MKaGyf1V2sf7aDLSzhLZS6+SLhyhLMbc/+F32ffSk+iiD+OHzIUJXRtwlYdkh3c73SSuS7oqYtzJ8L5geOsKJy5+lXSpzWZtOfztf4szbfrjiqWOpTW6T//udRhdVdy7LvFXzpEuHOLYhRcYHT9BK0kpnMfWY0brt+HBbRCH9iVZ3SeMN7FK437zmQInz78gNy+/+eX1FgEo3lL8KpeHHy0x/8RT7Fs5R0yb0qeUEhHZmLmshUs9rbggkRqnR5iyQEUxohJMaBFIQCxWHHEoiWWMpiKxES0xlHmJlDlmOkJN+tvC1b+m3FUj/vBx5vefJEosSiuq8W3W/vffwc03WXp+EdNTvDu9ouIHl2XfoTkqMdxz28WNLTdlcbJObWqM5NycfKB47wNu9Y7IyZe/RtaNqX0JYjjSNpjBTW688T9grXFe+OiXrF/uER88TefAcdpJTBrBQuSo+2sMbrwLG2uAR4b3WShukyWGe/Lpx+Kx02conJO7197eMwF7/HTqwacEMw+do02iNtAY2eWoSZX4snGufIA42lpBslUx8ElVag1bwUv81ttAtMAo0DWs34J7P9u99t5FIenB3DzUvul38KDpZ/PX222Xzgu5ApOAm0C+w+WPzgvSglhg+lbz+8LzQjBw7EDzeQKVNqVF16+BjCHfEYuauyjEi7B4FLRtPkfQvw15H0LehF1s3CTFnW8yDa6GendpTbbyjLz6yiv8+EevM729dyGJx0+4PqH7nFBpUPFW0LMG4yDU0M4gr0F5kHwr8Zs15ShYIDSVpMo3gUelwceNLSQ1UIAaNaEBgPZWJF5HkHVhupUpUB58AcVNRXdZHr0I0jolzPVgONxyPLeS2F41wqMA954iWhbSJbAR1KOtaGi0FVKom7UUNxRzp4TSgWpe5G3WbAAPqYJiAr5uBC5KoK4B14wrTfrok0rX9Nwrcu7sGfLNTX79o7/e0/19LIWrfWhFTj39+/ioSzApPtSYUNBKDMPJmCibY+IUUaSIwgY2BAhtgrS24kcguiIov/VdCYUOMdYkTIopNhHiTFEVU7Q3GKURHwgIxsaINBXMWoNGUVUVcRxTlzntLKUuCvI8p7N4gElIEF/T8WNU7ZAoRWGQUFErw1BnmCgidUMi5fBiEO9JlaP2gVKl6LhFrDzOVaANgsI5RxxZysmQLEtxGGpREKXUtSeyYAmIL/GuIutkGAVpEvHgzhof/O1f7fne7vkEPovOky9JMr+fGoORQBLq5uMiovFElLqFqIBWQ4wEdGgRpNFcogJB1WiaagMjYILZKl1p8nK1qXDa4qWDFk0USgzukS2maN5M8sriVIRXjSORhBwrNYpArSJGdh7wdP1DYilxKqJWlqAsngSnEmwIdPyAKNR4ZQgKNB6nIkrVIWAx1FipMOIx4jA7Mg9Bqa152OZ+LEEptAhG1Vgt1KFmMtqkWH8I92Zvk/92Fpc//zdl0mUhPfWPj5OcFNKzn96udUrI/pF5pp/jGpIv4PnMmDFjxowZM2bMmDFjxowZM2bMmDFjxozPh/8DpVO+u7uz3YkAAAAASUVORK5CYII=',
+  'Canva': 'data:image/png;base64,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',
+  'Chiara Celino': null,
+  'CIOFS': 'data:image/png;base64,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',
+  'Corriere della Sera': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAAAzCAYAAACaEpqBAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAA1ElEQVR4nO3YQQ6DIBAAwP5DQe3//2ivlrREKiramatRl2VZAo8HAAAAAAAAAAAAAAAA9zaEcT47hhCG1TGELp4e79KneGL/fTzT8Gwq/kNtnbyt7/d9W8WzRS4XuWe54tzNGKe3n7a2iu/utvlOB7YstDWVXmP7u21yC9TKwSndqWWKK09+MtJtt1SN1RhjvQPGnt0hdHHWfaC2tEXXaNnpSj1iG8h109yxvvYVy5rvleSjia73axBX2/9L7rrWOGvyrpZ3AAAAAAAAAAAAAACAv/YC5wo8cy60dhwAAAAASUVORK5CYII=',
+  'Delightex Edu': 'data:image/png;base64,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',
+  'DSGA Online': 'data:image/png;base64,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',
+  'Genially': 'data:image/png;base64,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',
+  'Google for Education': 'data:image/png;base64,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',
+  'LEGO® Education': 'data:image/png;base64,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',
+  'Okulus Scuola Sicura': null,
+  'ThingLink': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAAAzCAYAAACaEpqBAAAACXBIWXMAAAsSAAALEgHS3X78AAAFc0lEQVR4nO2b3XXjNhCF7+Tk3erATAVRKlh2YHVguoLIFUSuYLUVhKkg7MBMBautIFQFkSqYPHC4HkIAJUoESSXznYNjEwSBAXDxDxEzwzBi8MPUBhj/XUxcRjRMXEY0TFxGNExcRjRMXEY0TFxGNExcRjRMXEY0TFxGNH6cMnEiWgBIASzlb8nMmwlNGgQiSlHnJwVwYObVyGmCmdPYaZ5jUnEBWAD4c2IbYvCu/t9PkOZfI6XZyWDDIhEtu94R0dr1Z+ZqqPRnxlH9/zhSmlpQwboYk0HERUQ5gK9ElDn+WyJiAF8BfB4irTthN3H6DxOnD2AAcRHRFsCzPP5ORHp+MYsWZEzDED2XbqVHAFUg3LcB0jIGgIgWsgCISi9xEVFCRBURMRGVRLRg5hzAC2phpcwcGhIOfY0jolTc2R5Q5nULXxzO80LFexK+I+7mmyQQJrskLuebJGDzSV6UDVeNBpLvQqYp/wDYXBNPL5j5YicGsXLrM+FLJ/zJt45fiXoFmaMWo35XAVg58Weoe84mTCr+qZP2AkACoPDYkQNYeGwP2cHiV0h5bMU2nadWvp14l8771EnPjWsTKItlV1l78rN17E/61P01bkpxJR5xVYHK1C7tsKepqJVHQF1x5o7diarkvi45I660Iz86zR3aDccn8EWorJ003fJYddXbVOLShV7C0+I7xFWJGHJdmWcqylfB+luvuC6I1+eCFSV2bNHupXQll+KyCyq6S1y+nrXLrUM2K/8F2g22GENYvcXVO/J2hstAGF+LXDeVjXoYYV88PcVVNZUfEFAaSG/nCG/hCKzVg9woLjc/LH5NWaydd/m5NB3BVq6tMd3czhabRcGWmQ8AwPUC4dYd5z3qOUqu/MpAWHfCXDS2iD3NfKvhAXLkEoFfmHmjymLrvE+6PpaN6yfllem8xGZu4tpxeLV5C5WnUMtAWHf15quMUSrolrKQVeVGeX1h5vJWm/owN3HNAbdCW4fOskWQOWGqiPZcS46Pnfo9xth6cDBxOUjr1hu+n2RPb0NEG9Tie1Tvv0XqbYfkEeeH0HzoRE1cfjI4AgPwmzgtrCNOe7G5sEL7AL0IbRrLRvPz0Lv2Ji4P0hOlCB9Z7QG8od6rm2WvxfWNk43yekQ9VLYQQTULlGJIgZm4PMhkuALws/J+A/ATMxMzJ3oVN1dkdalX2k/66pMMhe/4mJs9AHgfaog0cfnZon1t5Q8RUzWRPbeQoT08fm7OJ5k5A/Cq3h8BvIo/gO/nu8k1CY8prnu+fvMsh/XaHYgov/YgeSw8wyOg5l/SuzW92UbvpRFRibpn+/uag/nY4tLDxoOcym/uoFLyC8I8oL7HdnJJEs7WBBHtxrjiEsIzPLbmX7K5vHeEtUS9kGnI+qYb+w79Fu0d4if13BzMzg5mzqXVrtDeVF3K8yfnky0R6Z38Ah8XKIF67rZGeON2DDLU5d0M909ElDWnFsycOOHd+WTv+WVUcTFzSUQvOJ3DHPFhrG5RIbHtAv9Xzve6AM7Fe/B9q35FAwBgz6+RZEgp8THhb46ACvmmIKIvAH5VnyVd6QoVzh91hfLV2VCZuZLJfKa8V06jcMO/SPgDrtiEJTncjI4aFg5zXb4D31dQTa+z97ToJtwa7d8FvAWEmKI+1pr1yjIGo/20bOxzrRtI9IPctvUJI3WevQ3mjvI9OLYVcUql/n9EvbJaNVeSZWleoD2XBKadT82S0YbFe0FWSSX6/Tzr1XMd5n+P9VwO6ujnkl9KHwG8mLD8WM/VgfRiK9TzsES9KlFP0ovTr4wGE5cRDRsWjWiYuIxomLiMaJi4jGiYuIxomLiMaJi4jGiYuIxomLiMaJi4jGj8C92Yt45oJRQpAAAAAElFTkSuQmCC',
+  'TOG': null,
+  'Verse': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAAAzCAYAAACaEpqBAAAACXBIWXMAAAsSAAALEgHS3X78AAAGQUlEQVR4nO2c4XGbShDH//fmzfDRaoCxXgVWB8IVRKnAuAAmcgWPVBBlKCCkgigVPNKB3QEaCoj0kU/7PtxhLSdAIDjbSfY3wwzCd8sBf3b39kgUEUEQXPDXaw9A+H0RcQnOEHEJzhBxCc4QcQnOEHEJzhBxCc4QcQnOEHEJzhBxCc4QcQnO+Pu1B/A7UUb+HEAIYAFgZra1lxTZ643qlDLyQ+hxAsAewNZLinTq8/zx4lJKZeznmogeL7FjhPUI4GqCYblmDmDJfr8rI3/tJcViypP88eJC/SbPRtiJcYGwyshfANhYhzdeUmw7+oQ4ep4+pD08000Z+eGUHkzENR32W3/f80GtUBc4AOQAWsWFU89zjoz/8JIiBhAbb5sBuGZjSQfY7UQS+um4YfsPAzxA0HBsNXo0PfCSIkddTGM89wniudzQK28rI3+Gugc6QIfWqzLyF15SNNqpPA+zEwD4jzW5fQuTCPFcbtj3bBew/SfUwxf/2y/JKM+llNrgNNfoIiWitMHODDpBDVEPLzvo3GNDRHlDv6oPoL1FDGBttiq53kG7/g0R9X3o9nli1B/2qstWm8dpgIe/DPoa3rG/2Yn+L8XYsLjAiMQSAJRSC2gBXZ+01sc+AAiVUiER2Unu3Dp/hro4Kxv/AlgrpRZNIu1CKRWY/hUfLxVpAwHb30In8hXLMvJnXlJMda4X51XDovFYtrB2AL5Dh4mKKwCpUmreYW6Jo7B2Vv9nGxeMj/d5IqLYbmdyp0GYEsTzdXtJkZkEe8eaBUPtjmTShH6suNYAblu299AJKscOFyHqwnogojkRrYhoYexUNq7AktgWDgBujY0FgH9QF9nyjEBtYmt8YUu7YIDNpj4/2H7G9l9i1sifyc0lL0obo8RFRI9ElDVt0A+CFxUfGsIav3lfiaiWYxg7cUv7JlamT9U/x6kg52dsAHgOhx/YoY9N1XszU+PnsD1mGwHbz1r2eRtX2Ne0mUpgTsKiUirFMTEFGoRj4BeRt5jjF99ZAefCaunfiz7hsIz8uIx8gi4BVOH4gP6Vc35/+EuXsf1rEz6dYULxPTt0B+BnGflkXpyLmbzOZYR1xw59JaKwpTlPvgMzK7OZjxkPEeVKqb7NN0qpvTlnn3DIOQAI+8wUy8jnHvjA+3hJkZeR/4TjvQlwwQsyBC8pUuOtPk1pd1JxmdIAF9b3DmHZLDFs5ukCe6YJAJ9bFrNz6FypGvMVgG9l5PdZ9gm4nQYPkbOxOC9JmLVKLqydGcOomepk4jLC+sIOPWHY4mp1QW+NUCkV2+UHI6DUhK0URzHEOD8r5Z7rBvXquo3TF86Mnz+3vmuiZ5kk5zLJry2soEc9iE+7UyIKzm0TDLcrh3mAnqHyHOQKHZ7DhLSYHWqq1z1jFos72zT0cTlrnLP93Zv6KoIVQSsO6CcsQHuqQTd6ArpmQo/VpMC8MFWIv1NKpS0TBqChONxBLd9Cu3BDHO9NgO6vJMbAX7Z8SsNjl38W0De2msUNEZZN0HKOFXQ9DQAwkffqwxpaCNW1pWiZXHhJsS8jv6/dgO1vzSL0CSbBrkohtXvwqzDWc21RLw/EAGbmrW8it5ZftjjmFEsz01xX4jR2UnaO7yPH2xsi2iul1jiG+2uTe8UjTQdsP+tot8VRXNdl5M9N2aAKrXPW1g71C0vsedX3JRmbc9kh7RN0ctq2hVb7FPWi4x2An0qpTCmVmz5cvC+6kGsW2Xn1fD2wwl/DzAr59bSGuoZPZng4DVG/r3YJwX4O4QXDHc2rri0aDxXgtKq9RF24BwD3HTnPEIbaCFFfgkrPdeiocHOBPPVYlOaeOjh33rfG2LD443yTGrl9wAhsYUoZK2gXXwnrB3QBsfGTG/QXCh+n/UA/nhlfbsb2HHqUUrMzeWWAZq/0yM7XpzC6aWmX9ejbt/2ki9UcJf9t5TSUkb/HMeQ9QeefewCPb+2zGZazzaEFXI37s5cUk00c5EvU6UjZ/g2Ab9D5jtO1wQsJocf2BT1zwEsQcU1HjBeczTrgfurv7uUfaEyECX0rs5zCE/f8dUbUSWb9Tl2UKiTnEpwhYVFwhohLcIaIS3CGiEtwhohLcIaIS3CGiEtwhohLcIaIS3CGiEtwhohLcMb/A45dN4QUnkUAAAAASUVORK5CYII=',
+  'Zebra Multimedia': 'data:image/png;base64,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',
+  '-': null
+};
+
+function partnerLogoHTML(partner, size = 20) {
+  const src = PARTNER_LOGOS[partner];
+  if (!src) return `<span class="partner-name-text">${partner}</span>`;
+  return `<img src="${src}" alt="${partner}" title="${partner}" style="height:${size}px;width:auto;object-fit:contain;vertical-align:middle;">`;
+}
+
+// ════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════
+const DATES = ['2026-03-11','2026-03-12','2026-03-13'];
+const DATE_LABELS = {'2026-03-11':'Mercoledì 11 Marzo','2026-03-12':'Giovedì 12 Marzo','2026-03-13':'Venerdì 13 Marzo'};
+const DATE_SHORT = {'2026-03-11':'11 Marzo','2026-03-12':'12 Marzo','2026-03-13':'13 Marzo'};
+const DAY_NAMES = {'2026-03-11':'Giorno 1','2026-03-12':'Giorno 2','2026-03-13':'Giorno 3'};
+
+let state = {
+  activeDay: '2026-03-11',
+  activeTypes: new Set(['Workshop','Demo','Seminario','Visita Guidata']),
+  activeRoom: null, // null = all
+  search: '',
+  viewMode: 'time' // 'time' or 'room'
+};
+
+// ════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════
+function init() {
+  buildDaySelector();
+  buildTypeFilters();
+  buildRoomFilters();
+  bindTabs();
+  bindSearch();
+  bindModal();
+  bindViewToggle();
+  render();
+
+}
+
+// ── Tabs ────────────────────────────────────
+function bindTabs() {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+// ── Day selector ────────────────────────────
+function buildDaySelector() {
+  const el = document.getElementById('daySelector');
+  el.innerHTML = DATES.map(d => {
+    const count = EVENTS.filter(e => e.date === d).length;
+    return `<button class="day-btn ${d === state.activeDay ? 'active' : ''}" data-date="${d}">
+      <div class="day-label">${DAY_NAMES[d]}</div>
+      <div class="day-date">${DATE_SHORT[d]}</div>
+      <div class="day-count">${count} eventi</div>
+    </button>`;
+  }).join('');
+
+  el.querySelectorAll('.day-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.activeDay = btn.dataset.date;
+      el.querySelectorAll('.day-btn').forEach(b => b.classList.toggle('active', b.dataset.date === state.activeDay));
+      render();
+    });
+  });
+}
+
+// ── Type filters ────────────────────────────
+function buildTypeFilters() {
+  const types = ['Workshop','Demo','Seminario','Visita Guidata'];
+  const el = document.getElementById('typeFilters');
+  el.innerHTML = types.map(t => {
+    const count = EVENTS.filter(e => e.type === t && e.date === state.activeDay).length;
+    return `<button class="type-pill active" data-type="${t}">
+      <span class="type-dot"></span> ${t} <span class="pill-count">${count}</span>
+    </button>`;
+  }).join('');
+
+  el.querySelectorAll('.type-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const type = pill.dataset.type;
+      if (state.activeTypes.has(type)) {
+        if (state.activeTypes.size > 1) state.activeTypes.delete(type);
+      } else {
+        state.activeTypes.add(type);
+      }
+      pill.classList.toggle('active', state.activeTypes.has(type));
+      render();
+    });
+  });
+}
+
+function updateTypeCounts() {
+  document.querySelectorAll('.type-pill').forEach(pill => {
+    const t = pill.dataset.type;
+    const count = EVENTS.filter(e => e.type === t && e.date === state.activeDay).length;
+    pill.querySelector('.pill-count').textContent = count;
+  });
+}
+
+// ── Room filters ────────────────────────────
+function buildRoomFilters() {
+  const rooms = [...new Set(EVENTS.map(e => e.room))].sort();
+  const el = document.getElementById('roomFilters');
+  el.innerHTML = '<span class="filter-label" style="margin-right:2px">Area:</span>' +
+    `<button class="room-pill active" data-room="all">Tutte</button>` +
+    rooms.map(r => `<button class="room-pill" data-room="${r}">${r}</button>`).join('');
+
+  el.querySelectorAll('.room-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      state.activeRoom = pill.dataset.room === 'all' ? null : pill.dataset.room;
+      el.querySelectorAll('.room-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      render();
+    });
+  });
+}
+
+// ── Search ──────────────────────────────────
+function bindSearch() {
+  const input = document.getElementById('searchInput');
+  let debounce;
+  input.addEventListener('input', () => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => {
+      state.search = input.value.toLowerCase().trim();
+      render();
+    }, 200);
+  });
+}
+
+// ── View Toggle ─────────────────────────────
+function bindViewToggle() {
+  const toggle = document.getElementById('viewToggle');
+  toggle.querySelectorAll('.view-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.viewMode = btn.dataset.view;
+      toggle.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.toggle('active', b.dataset.view === state.viewMode));
+      render();
+    });
+  });
+}
+
+function updateViewToggleVisibility() {
+  const toggle = document.getElementById('viewToggle');
+  // Hide the toggle when a specific room is filtered (room view makes no sense with 1 room)
+  if (state.activeRoom) {
+    toggle.style.opacity = '0.35';
+    toggle.style.pointerEvents = 'none';
+    // Force time view when single room selected
+    state.viewMode = 'time';
+    toggle.querySelectorAll('.view-toggle-btn').forEach(b => b.classList.toggle('active', b.dataset.view === 'time'));
+  } else {
+    toggle.style.opacity = '1';
+    toggle.style.pointerEvents = 'auto';
+  }
+}
+
+// ════════════════════════════════════════════════
+// RENDER
+// ════════════════════════════════════════════════
+function render() {
+  updateTypeCounts();
+  updateViewToggleVisibility();
+
+  let filtered = EVENTS.filter(e => {
+    if (e.date !== state.activeDay) return false;
+    if (!state.activeTypes.has(e.type)) return false;
+    if (state.activeRoom && e.room !== state.activeRoom) return false;
+    if (state.search) {
+      const haystack = (e.title + ' ' + e.partner + ' ' + e.abstract + ' ' + e.code + ' ' + e.room).toLowerCase();
+      if (!haystack.includes(state.search)) return false;
+    }
+    return true;
+  });
+
+  // Sort by time
+  filtered.sort((a, b) => a.time.localeCompare(b.time));
+
+  const timeline = document.getElementById('timeline');
+  const resultsCount = document.getElementById('resultsCount');
+
+  resultsCount.innerHTML = `<strong>${filtered.length}</strong> eventi ${DATE_LABELS[state.activeDay]}`;
+
+  if (filtered.length === 0) {
+    timeline.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">🔍</div>
+      <p>Nessun evento trovato con i filtri selezionati</p>
+    </div>`;
+    return;
+  }
+
+  if (state.viewMode === 'room' && !state.activeRoom) {
+    renderByRoom(filtered, timeline);
+  } else {
+    renderByTime(filtered, timeline);
+  }
+
+  // Bind card clicks
+  timeline.querySelectorAll('.event-card').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.code));
+  });
+}
+
+const ROOM_ICONS = {
+  'C2 Agorà': '🎤',
+  'C2 Google Area powered by Acer': '💻',
+  'C2 Robotica': '🤖',
+  'C2 STEAM': '🧱',
+  'C2 Software Area': '🖥️',
+  'E16 Cavedio - Pad.Spadolini Inferiore': '🏛️',
+  "Kairos - L'aula delle Connessioni": '✨'
+};
+
+function renderByTime(filtered, container) {
+  const groups = {};
+  filtered.forEach(e => {
+    if (!groups[e.time]) groups[e.time] = [];
+    groups[e.time].push(e);
+  });
+
+  container.innerHTML = Object.entries(groups).map(([time, events]) => `
+    <div class="time-group">
+      <div class="time-label">
+        <span class="clock-icon">🕐</span>
+        <span>${time}</span>
+      </div>
+      <div class="events-row">
+        ${events.map(e => renderCard(e)).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderByRoom(filtered, container) {
+  // Group by room, maintaining order
+  const roomOrder = [
+    'C2 Agorà',
+    'C2 Google Area powered by Acer',
+    'C2 STEAM',
+    'C2 Robotica',
+    'C2 Software Area',
+    'E16 Cavedio - Pad.Spadolini Inferiore',
+    "Kairos - L'aula delle Connessioni"
+  ];
+
+  const groups = {};
+  filtered.forEach(e => {
+    if (!groups[e.room]) groups[e.room] = [];
+    groups[e.room].push(e);
+  });
+
+  // Sort rooms by predefined order
+  const sortedRooms = Object.keys(groups).sort((a, b) => {
+    const ia = roomOrder.indexOf(a);
+    const ib = roomOrder.indexOf(b);
+    return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+  });
+
+  container.innerHTML = sortedRooms.map(room => {
+    const events = groups[room];
+    const icon = ROOM_ICONS[room] || '📍';
+    return `
+      <div class="room-group">
+        <div class="room-group-header">
+          <div class="room-group-icon">${icon}</div>
+          <div class="room-group-name">${room}</div>
+          <div class="room-group-count">${events.length} eventi</div>
+        </div>
+        <div class="events-row">
+          ${events.map(e => renderCard(e, true)).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderCard(e, showTime = false) {
+  const pct = e.capacity > 0 ? Math.round((e.enrolled / e.capacity) * 100) : 0;
+  const isSoldOut = e.capacity > 0 && e.enrolled >= e.capacity;
+  const soldOutClass = isSoldOut ? ' sold-out' : '';
+  const soldOutBadge = isSoldOut ? '<div class="sold-out-badge">Sold Out</div>' : '';
+  return `<div class="event-card${soldOutClass}" data-type="${e.type}" data-code="${e.code}">
+    <div class="event-card-stripe"></div>
+    <div class="event-card-body">
+      ${soldOutBadge}
+      <div class="event-card-meta">
+        <span class="event-type-badge">${e.type}</span>
+        ${showTime ? `<span class="event-type-badge" style="background:rgba(0,0,0,0.06);color:var(--c2-text);">🕐 ${e.time}</span>` : ''}
+        <span class="event-partner">${partnerLogoHTML(e.partner, 18)}</span>
+      </div>
+      <div class="event-card-title">${e.title}</div>
+      <div class="event-card-room">📍 ${e.room}</div>
+    </div>
+    <div class="event-card-footer">
+      <div class="event-capacity">
+        <span>${e.enrolled}/${e.capacity} posti</span>
+        <div class="cap-bar"><div class="cap-fill" style="width:${Math.min(pct,100)}%"></div></div>
+      </div>
+      <button class="event-detail-btn">Dettagli →</button>
+    </div>
+  </div>`;
+}
+
+// ════════════════════════════════════════════════
+// MODAL
+// ════════════════════════════════════════════════
+function bindModal() {
+  document.getElementById('modalOverlay').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  });
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+}
+
+function openModal(code) {
+  const e = EVENTS.find(ev => ev.code === code);
+  if (!e) return;
+
+  const modal = document.getElementById('modal');
+  const overlay = document.getElementById('modalOverlay');
+  modal.setAttribute('data-type', e.type);
+
+  const dateLabel = DATE_LABELS[e.date] || e.date;
+  const isSoldOut = e.capacity > 0 && e.enrolled >= e.capacity;
+
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-meta">
+      <span class="modal-type-badge">${e.type}</span>
+      <span class="modal-code">${e.code}</span>
+    </div>
+    <h2 class="modal-title">${e.title}</h2>
+    ${isSoldOut ? `<div class="modal-sold-out-banner">
+      <span class="sold-out-icon">🚫</span>
+      <span class="sold-out-text">Evento al completo — Sold Out</span>
+    </div>` : ''}
+    <div class="modal-info-grid">
+      <div class="modal-info-item">
+        <div class="info-label">📅 Data e Ora</div>
+        <div class="info-value">${dateLabel}<br>${e.time}</div>
+      </div>
+      <div class="modal-info-item">
+        <div class="info-label">📍 Luogo</div>
+        <div class="info-value">${e.room}</div>
+      </div>
+      <div class="modal-info-item">
+        <div class="info-label">🤝 Partner</div>
+        <div class="info-value" style="display:flex;align-items:center;gap:8px;">${partnerLogoHTML(e.partner, 28)}</div>
+      </div>
+      <div class="modal-info-item">
+        <div class="info-label">👥 Capienza</div>
+        <div class="info-value">${e.enrolled} / ${e.capacity} iscritti</div>
+      </div>
+    </div>
+    ${e.abstract ? `<div class="modal-abstract-label">Descrizione</div><p class="modal-abstract">${e.abstract}</p>` : ''}
+    <div class="modal-actions">
+      <button class="btn-primary cta-dettagli-evento" data-event-code="${e.code}">
+        ✉️ Ricevi dettagli via email
+      </button>
+    </div>
+  `;
+
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // Bind CTA — dataLayer push + class for Sleeknote
+  const ctaBtn = modal.querySelector('.cta-dettagli-evento');
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      // Push event data to dataLayer for GTM / Sleeknote
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'cta_dettagli_evento',
+        'eventCode': e.code,
+        'eventTitle': e.title,
+        'eventType': e.type,
+        'eventPartner': e.partner,
+        'eventDate': e.date,
+        'eventTime': e.time,
+        'eventRoom': e.room,
+        'eventAbstract': e.abstract,
+        'eventLink': e.link,
+        'eventCapacity': e.capacity,
+        'eventEnrolled': e.enrolled
+      });
+    });
+  }
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ── Start ───────────────────────────────────
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
