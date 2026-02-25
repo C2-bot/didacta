@@ -1013,11 +1013,77 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.2); }
 
 /* ─── TOUCH / RESPONSIVE ────────────────────── */
+/* ─── MOBILE FILTERS (hidden on desktop) ────── */
+.mobile-filters {
+  display: none;
+}
+
+.mobile-filter-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-filter-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--c2-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.mobile-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--c2-border);
+  border-radius: var(--radius-sm);
+  background: white;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--c2-text);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+}
+
+.mobile-select:focus {
+  outline: none;
+  border-color: var(--c2-blue);
+  box-shadow: 0 0 0 3px rgba(0,70,170,0.1);
+}
+
 @media (max-width: 768px) {
   .header { padding: 20px 20px 0; }
   .main { padding: 20px 20px 40px; }
-  .header-top { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .header-info { text-align: left; }
+
+  /* Center logos */
+  .header-top { flex-direction: column; align-items: center; gap: 10px; }
+  .brand { justify-content: center; }
+  .header-info { text-align: center; }
+
+  /* Hide desktop pills, show mobile dropdowns */
+  .type-filters { display: none !important; }
+  .room-filter-row { display: none !important; }
+  .mobile-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  /* Fix view toggle */
+  .results-bar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .results-count { text-align: center; }
+  .view-toggle { align-self: center; }
+
   .events-row { grid-template-columns: 1fr; }
   .modal-content { padding: 24px 24px 20px; }
   .modal-info-grid { grid-template-columns: 1fr; }
@@ -1035,6 +1101,9 @@ body {
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBNV7582"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+<!-- Sleeknote click trigger (persistente nel DOM, nascosto) -->
+<button id="sleeknoteClickTrigger" class="cta-dettagli-evento" style="position:fixed;left:-9999px;top:-9999px;opacity:0;width:1px;height:1px;" aria-hidden="true"></button>
 
 <div class="header">
   <div class="header-top">
@@ -1063,6 +1132,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="day-selector" id="daySelector"></div>
 
     <div class="type-filters" id="typeFilters"></div>
+
+    <!-- Mobile dropdowns (hidden on desktop) -->
+    <div class="mobile-filters" id="mobileFilters">
+      <div class="mobile-filter-group">
+        <label class="mobile-filter-label">Tipologia</label>
+        <select id="mobileTypeFilter" class="mobile-select">
+          <option value="all">Tutte le tipologie</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Demo">Demo</option>
+          <option value="Seminario">Seminario</option>
+          <option value="Visita Guidata">Visita Guidata</option>
+        </select>
+      </div>
+      <div class="mobile-filter-group">
+        <label class="mobile-filter-label">Area</label>
+        <select id="mobileRoomFilter" class="mobile-select">
+          <option value="all">Tutte le aree</option>
+        </select>
+      </div>
+    </div>
 
     <div class="room-filter-row" id="roomFilters">
       <span class="filter-label" style="margin-right:2px">Area:</span>
@@ -1190,6 +1279,7 @@ async function init() {
   bindSearch();
   bindModal();
   bindViewToggle();
+  bindMobileFilters();
   render();
 
   // Auto-refresh dati ogni 60 secondi (per aggiornamento iscritti)
@@ -1278,8 +1368,45 @@ function buildRoomFilters() {
       state.activeRoom = pill.dataset.room === 'all' ? null : pill.dataset.room;
       el.querySelectorAll('.room-pill').forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
+      // Sync mobile dropdown
+      document.getElementById('mobileRoomFilter').value = pill.dataset.room;
       render();
     });
+  });
+
+  // Populate mobile room dropdown
+  const mobileRoom = document.getElementById('mobileRoomFilter');
+  mobileRoom.innerHTML = '<option value="all">Tutte le aree</option>' +
+    rooms.map(r => `<option value="${r}">${r}</option>`).join('');
+}
+
+function bindMobileFilters() {
+  const allTypes = ['Workshop','Demo','Seminario','Visita Guidata'];
+
+  // Mobile type filter
+  const mobileType = document.getElementById('mobileTypeFilter');
+  mobileType.addEventListener('change', () => {
+    if (mobileType.value === 'all') {
+      state.activeTypes = new Set(allTypes);
+    } else {
+      state.activeTypes = new Set([mobileType.value]);
+    }
+    // Sync desktop pills
+    document.querySelectorAll('.type-pill').forEach(pill => {
+      pill.classList.toggle('active', state.activeTypes.has(pill.dataset.type));
+    });
+    render();
+  });
+
+  // Mobile room filter
+  const mobileRoom = document.getElementById('mobileRoomFilter');
+  mobileRoom.addEventListener('change', () => {
+    state.activeRoom = mobileRoom.value === 'all' ? null : mobileRoom.value;
+    // Sync desktop pills
+    document.querySelectorAll('.room-pill').forEach(p => {
+      p.classList.toggle('active', (state.activeRoom === null && p.dataset.room === 'all') || p.dataset.room === state.activeRoom);
+    });
+    render();
   });
 }
 
@@ -1549,6 +1676,11 @@ function openModal(code) {
         'eventCapacity': e.capacity,
         'eventEnrolled': e.enrolled
       });
+      // Trigger click on persistent hidden element for Sleeknote
+      setTimeout(() => {
+        const trigger = document.getElementById('sleeknoteClickTrigger');
+        if (trigger) trigger.click();
+      }, 100);
     });
   }
 }
