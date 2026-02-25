@@ -1656,34 +1656,26 @@ function openModal(code) {
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 
-  // Bind CTA — dataLayer push + class for Sleeknote
-  const ctaBtn = modal.querySelector('.cta-dettagli-evento');
-  if (ctaBtn) {
-    ctaBtn.addEventListener('click', () => {
-      // Push event data to dataLayer for GTM / Sleeknote
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'event': 'cta_dettagli_evento',
-        'eventCode': e.code,
-        'eventTitle': e.title,
-        'eventType': e.type,
-        'eventPartner': e.partner,
-        'eventDate': e.date,
-        'eventTime': e.time,
-        'eventRoom': e.room,
-        'eventAbstract': e.abstract,
-        'eventLink': e.link,
-        'eventCapacity': e.capacity,
-        'eventEnrolled': e.enrolled
-      });
-      // Trigger click on persistent hidden element for Sleeknote
-      // Delay gives GTM time to process SiteData before popup opens
-      setTimeout(() => {
-        const trigger = document.getElementById('sleeknoteClickTrigger');
-        if (trigger) trigger.click();
-      }, 500);
-    });
-  }
+  // Push SiteData to dataLayer NOW (when modal opens)
+  // so GTM has time to process before user clicks CTA
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'cta_dettagli_evento',
+    'eventCode': e.code,
+    'eventTitle': e.title,
+    'eventType': e.type,
+    'eventPartner': e.partner,
+    'eventDate': e.date,
+    'eventTime': e.time,
+    'eventRoom': e.room,
+    'eventAbstract': e.abstract,
+    'eventLink': e.link,
+    'eventCapacity': e.capacity,
+    'eventEnrolled': e.enrolled
+  });
+
+  // CTA click: Sleeknote catches it via class 'cta-dettagli-evento'
+  // SiteData is already set by GTM at this point
 }
 
 function closeModal() {
