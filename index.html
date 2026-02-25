@@ -1656,7 +1656,7 @@ function openModal(code) {
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 
-  // CTA click: al click aggiorno SEMPRE il dataLayer con l'evento giusto
+  // ✅ CTA click: al click aggiorno SEMPRE il dataLayer con l'evento giusto
 // e poi apro Sleeknote con il trigger nascosto (così parte al primo click).
 const ctaBtn = document.querySelector('#modalContent .cta-dettagli-evento');
 
@@ -1694,6 +1694,8 @@ if (ctaBtn) {
       if (trigger) trigger.click();
     }, 150);
   });
+}
+
 }
 
 function closeModal() {
