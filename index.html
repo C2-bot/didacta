@@ -1656,26 +1656,44 @@ function openModal(code) {
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
 
-  // Push SiteData to dataLayer NOW (when modal opens)
-  // so GTM has time to process before user clicks CTA
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'cta_dettagli_evento',
-    'eventCode': e.code,
-    'eventTitle': e.title,
-    'eventType': e.type,
-    'eventPartner': e.partner,
-    'eventDate': e.date,
-    'eventTime': e.time,
-    'eventRoom': e.room,
-    'eventAbstract': e.abstract,
-    'eventLink': e.link,
-    'eventCapacity': e.capacity,
-    'eventEnrolled': e.enrolled
-  });
+  // ✅ CTA click: al click aggiorno SEMPRE il dataLayer con l'evento giusto
+// e poi apro Sleeknote con il trigger nascosto (così parte al primo click).
+const ctaBtn = document.querySelector('#modalContent .cta-dettagli-evento');
 
-  // CTA click: Sleeknote catches it via class 'cta-dettagli-evento'
-  // SiteData is already set by GTM at this point
+if (ctaBtn) {
+  ctaBtn.addEventListener('click', (evClick) => {
+    // Evito che eventuali handler esterni/doppi interferiscano
+    evClick.preventDefault();
+    evClick.stopPropagation();
+
+    window.dataLayer = window.dataLayer || [];
+
+    // (opzionale ma utile) "pulizia" per evitare letture stale
+    window.dataLayer.push({ event: 'c2_clear_event' });
+
+    // Push dei dati aggiornati (questo è l'evento della modale appena aperta)
+    window.dataLayer.push({
+      event: 'cta_dettagli_evento',
+      eventCode: e.code,
+      eventTitle: e.title,
+      eventType: e.type,
+      eventPartner: e.partner,
+      eventDate: e.date,
+      eventTime: e.time,
+      eventRoom: e.room,
+      eventAbstract: e.abstract,
+      eventLink: e.link,
+      eventCapacity: e.capacity,
+      eventEnrolled: e.enrolled
+    });
+
+    // Apri Sleeknote: click forzato sul trigger persistente
+    // Delay minimo per dare tempo a GTM di valorizzare le variabili del form
+    setTimeout(() => {
+      const trigger = document.getElementById('sleeknoteClickTrigger');
+      if (trigger) trigger.click();
+    }, 150);
+  });
 }
 
 function closeModal() {
