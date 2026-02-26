@@ -8,7 +8,7 @@
     "room": "C2 Agorà",
     "title": "Un altro passo nel futuro della scuola con Google for Education e Corriere della Sera",
     "abstract": "C2 Group, in collaborazione con Google for Education e il Corriere della Sera ti invitano a scoprire il progetto \"\"A Scuola con il Corriere\"\", un'iniziativa unica che unisce il meglio della tecnologia Google Workspace for Education Plus con l'autorevolezza dei contenuti del Corriere della Sera.\r\nTi sveleremo come questa partnership epocale può offrirti gli strumenti per creare lezioni interattive, coinvolgenti e connesse al mondo reale. Dimentica i vecchi schemi e preparati a esplorare nuove metodologie didattiche che renderanno i tuoi studenti i veri protagonisti dell'apprendimento.",
-    "link": "https://exhibitor.fieradidacta.it/eventi/un_altro_passo_nel_futuro_della_scuola_con_google_for_education_e_corriere_della_sera_c2agor01",
+    "link": "",
     "capacity": 30,
     "enrolled": 1
   },
@@ -49,7 +49,7 @@
     "abstract": "Questo workshop di robotica educativa propone un'esperienza a tutto tondo in cui i partecipanti potranno raccontare e raccontarsi con fantasia e far prendere vita a personaggi ed ambienti grazie alla programmazione. Il gioco diventa motore dell’apprendimento: un’occasione per scoprire, sperimentare e collaborare.",
     "link": "https://exhibitor.fieradidacta.it/eventi/robotica_educativa_tra_racconti_e_fantasia_con_lego_education_spike_essential_c2leg01",
     "capacity": 12,
-    "enrolled": 1
+    "enrolled": 2
   },
   {
     "date": "2026-03-11",
@@ -127,7 +127,7 @@
     "abstract": "La gestione scolastica richiede velocità. In un laboratorio operativo di un'ora, scopri come l'AI di Google diventa il tuo miglior alleato. Attraverso tre stazioni di lavoro vedrai: NotebookLM analizzare complessi decreti e bandi PNRR; Gemini in Workspace automatizzare la stesura di circolari e dati di bilancio; Gemini Chatbot supportare strategie e comunicazioni istituzionali. Riduci drasticamente il carico burocratico e guadagna efficienza immediata.",
     "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_per_la_governance_gemini_e_notebooklm_per_dirigenti_e_dsga_strategie_ed_efficienza_per_scuola_complessa_c2gog02",
     "capacity": 20,
-    "enrolled": 7
+    "enrolled": 10
   },
   {
     "date": "2026-03-11",
@@ -244,7 +244,7 @@
     "abstract": "Raccogliere i rifiuti è uno dei problemi più comuni. In questo workshop per docenti di scuola primaria cercheremo soluzioni originali per sostenere e ripulire l'ambiente marino testando soluzioni diverse e lavorando per prove ed errori.",
     "link": "https://exhibitor.fieradidacta.it/eventi/la_robotica_a_servizio_della_sostenibilita_con_i_kit_lego_education_scienze_c2leg03",
     "capacity": 12,
-    "enrolled": 1
+    "enrolled": 2
   },
   {
     "date": "2026-03-11",
@@ -271,6 +271,19 @@
     "link": "https://exhibitor.fieradidacta.it/eventi/genially_experience_scopri_le_novita_e_vivile_nella_challenge_live_c2gen02",
     "capacity": 6,
     "enrolled": 6
+  },
+  {
+    "date": "2026-03-11",
+    "time": "16:00",
+    "type": "Workshop",
+    "code": "C2AGOR04",
+    "partner": "HP",
+    "room": "C2 Agorà",
+    "title": "Cybersecurity: dalle minacce emergenti alle professioni del futuro",
+    "abstract": "Dalle tecniche di attacco più avanzate — social engineering evoluto, AI‑assisted phishing e attacchi alla supply chain — alle figure professionali oggi più richieste nel mercato del lavoro. Il workshop esplora ruoli come SOC Analyst, Threat Hunter e team Red/Blue/Purple, fino alla sicurezza OT/ICS, offrendo a docenti e dirigenti strumenti concreti per orientare gli studenti verso percorsi professionali ad alta occupabilità.",
+    "link": "https://exhibitor.fieradidacta.it/eventi/cybersecurity_dalle_minacce_emergenti_alle_professioni_del_futuro_c2agor04",
+    "capacity": 30,
+    "enrolled": 0
   },
   {
     "date": "2026-03-11",
@@ -348,7 +361,7 @@
     "abstract": "Bullismo e cyberbullismo cambiano insieme ai contesti in cui gli studenti crescono, comunicano e costruiscono la propria identità. La scuola resta il luogo chiave per riconoscere i segnali, prevenire l’esclusione e promuovere relazioni sane e consapevoli. Il seminario offre strumenti e chiavi di lettura per comprendere le forme attuali del fenomeno e rafforzare il ruolo educativo nella creazione di un ambiente sicuro e inclusivo.",
     "link": "https://exhibitor.fieradidacta.it/eventi/informati_e_formati_su_bullismo_e_cyberbullismo_c2agor05",
     "capacity": 30,
-    "enrolled": 4
+    "enrolled": 5
   },
   {
     "date": "2026-03-12",
@@ -361,7 +374,7 @@
     "abstract": "La didattica digitale evolve con Education Plus. Partecipa al laboratorio per testare tre strumenti chiave: Lezione Attiva: trasforma i video in quiz e potenzia la lettura con l'AI.  Esercizi Guidati: automatizza le correzioni e ottieni dati immediati sulla classe. Regia di Classe: controlla gli schermi degli studenti e guida la navigazione in tempo reale.\r\nRiduci il carico di lavoro e trasforma ogni lezione in un'esperienza inclusiva.",
     "link": "https://exhibitor.fieradidacta.it/eventi/lezione_inclusiva_superpoteri_google_edu_plus_dai_video_ai_class_tools_un_workshop_immersivo_pratico_a_rotazione_c2gog05",
     "capacity": 20,
-    "enrolled": 4
+    "enrolled": 5
   },
   {
     "date": "2026-03-12",
@@ -374,7 +387,7 @@
     "abstract": "Visita guidata dentro Kairos – L’Aula delle Connessioni, per vivere un ambiente immersivo attivo e comprenderne tecnologie, funzionamento e metodologia. Scopriremo come gesto umano, spazio e strumenti digitali si integrano in un ecosistema progettato per inclusione, personalizzazione e supporto a studenti con disabilità e bisogni educativi complessi. Un modello ispirato al progetto Aula Ulisse sviluppato con Fondazione TOG.",
     "link": "https://exhibitor.fieradidacta.it/eventi/dallesperienza_ulisse_a_kairos_visita_guidata_al_nuovo_modello_di_didattica_immersiva_che_riprogetta_gli_spazi_per_linclusione_c2kair05",
     "capacity": 8,
-    "enrolled": 1
+    "enrolled": 2
   },
   {
     "date": "2026-03-12",
@@ -400,7 +413,7 @@
     "abstract": "Avete mai passato metà lezione a cercare un contatto difettoso sulla breadboard? Con il nuovo Plug-and-Make Kit, l'elettronica diventa finalmente \"a prova di studente\". In questo workshop pratico vedremo come il sistema Modulino™ permetta di creare progetti funzionanti in pochi secondi, senza errori di cablaggio. Trasformeremo l'aula in un laboratorio di innovazione immediata, dove l'unico limite è la fantasia, non i cavetti interrotti.",
     "link": "https://exhibitor.fieradidacta.it/eventi/basta_cavi_scollegati_la_rivoluzione_arduino_plugandplay_entra_in_classe_c2rob05",
     "capacity": 12,
-    "enrolled": 1
+    "enrolled": 2
   },
   {
     "date": "2026-03-12",
@@ -413,7 +426,7 @@
     "abstract": "Adobe Express è l'applicazione più adatta per la progettazione di contenuti visivi e presentazioni. In questa sessione verrà mostrato come organizzare immagini e spazi per sviluppare progetti interdisciplinari o preparare materiali didattici, con focus sarà sulla progettazione collaborativa.",
     "link": "https://exhibitor.fieradidacta.it/eventi/adobe_express_progettare_idee_e_contenuti_visivi_in_modo_collaborativo_collaborazione_tra_docenti_e_studenti_c2sftw04",
     "capacity": 10,
-    "enrolled": 1
+    "enrolled": 2
   },
   {
     "date": "2026-03-12",
@@ -439,7 +452,7 @@
     "abstract": "Come portare l'IA a scuola? Scopri il progetto della Rete DigitalMente NOI, C2 e Google for Education, che ha guidato 79 istituti e oltre 4000 persone nell'adozione di Google AI Pro per Dirigenti Scolastici, DSGA, amministrativi e docenti. Condivideremo strategie e risultati concreti per ispirare dirigenti e docenti, fornendo le chiavi pratiche per replicare questo modello di successo nelle proprie realtà. Unisciti a noi per guidare insieme la scuola verso il futuro!",
     "link": "https://exhibitor.fieradidacta.it/eventi/rete_digitalmente_noi_lintelligenza_artificiale_fa_scuola_a_brescia_e_nel_mondo_c2agor06",
     "capacity": 30,
-    "enrolled": 0
+    "enrolled": 2
   },
   {
     "date": "2026-03-12",
@@ -452,7 +465,7 @@
     "abstract": "La gestione scolastica richiede velocità. In un laboratorio operativo di un'ora, scopri come l'AI di Google diventa il tuo miglior alleato. Attraverso tre stazioni di lavoro vedrai: NotebookLM analizzare complessi decreti e bandi PNRR; Gemini in Workspace automatizzare la stesura di circolari e dati di bilancio; Gemini Chatbot supportare strategie e comunicazioni istituzionali. Riduci drasticamente il carico burocratico e guadagna efficienza immediata.",
     "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_per_la_governance_gemini_e_notebooklm_per_dirigenti_e_dsga_strategie_ed_efficienza_per_scuola_complessa_c2gog06",
     "capacity": 20,
-    "enrolled": 16
+    "enrolled": 17
   },
   {
     "date": "2026-03-12",
@@ -514,7 +527,7 @@
     "partner": "Delightex Edu",
     "room": "C2 Software Area",
     "title": "AI Buddy: il Narratore di storie",
-    "abstract": "-",
+    "abstract": "Un’esperienza narrativa interattiva dove Eco, una guida empatica e ironica, invoglia a leggere e trasforma la lettura in un’avventura dinamica. Si parte dal Bosco della Fantasia in un viaggio nel tempo per scardinare l'idea della lettura come attività passiva e rendere i ragazzi protagonisti della costruzione di una storia, tra enigmi e oggetti da scoprire.",
     "link": "https://exhibitor.fieradidacta.it/eventi/ai_buddy_il_narratore_di_storie_c2del03",
     "capacity": 6,
     "enrolled": 0
@@ -530,7 +543,7 @@
     "abstract": "Nel Centro TOG di Milano, dove si curano gratuitamente bambini con disabilità neurologiche complesse, la Stanza Immersiva Ulisse trasforma la terapia in un viaggio di luci, suoni e immagini. È uno spazio senza muri, dove gioco e riabilitazione si intrecciano stimolando risposte motorie, cognitive ed espressive. Un’esperienza che parla anche alle scuole: inclusione, relazione e nuove possibilità educative",
     "link": "https://exhibitor.fieradidacta.it/eventi/genially_un_clic_per_attivare_lesperienza_in_aula",
     "capacity": 40,
-    "enrolled": 11
+    "enrolled": 13
   },
   {
     "date": "2026-03-12",
@@ -541,7 +554,7 @@
     "room": "C2 Agorà",
     "title": "CIOFS AI PRO - il progetto nazionale di CIOFS",
     "abstract": "Scopri CIOFS AI PRO, il progetto nazionale che guida l'adozione dell'IA. Oltre 400 professionisti delle sedi regionali CIOFS FP stanno sperimentando con successo Google AI Pro. In questo incontro esploreremo il modello di adozione su larga scala, condividendo strategie e risultati concreti. L'obiettivo? Fornire a reti, scuole e dirigenti gli strumenti pratici per replicare questo format e integrare efficacemente l'Intelligenza Artificiale nelle proprie realtà.",
-    "link": "https://exhibitor.fieradidacta.it/eventi/ciofs_ai_pro_ladozione_guidata_dellintelligenza_artificiale_su_scala_nazionale_c2agor07",
+    "link": "",
     "capacity": 30,
     "enrolled": 0
   },
@@ -556,7 +569,7 @@
     "abstract": "Vuoi potenziare il tuo insegnamento con l'AI? Partecipa al nostro laboratorio interattivo. Tre tappe da 15 minuti per padroneggiare l'ecosistema Google AI: usa NotebookLM come assistente allo studio inclusivo, sfrutta Gemini in Workspace per generare materiali in un attimo e dialoga con il Chatbot per ideare lezioni innovative. Un'esperienza operativa per acquisire subito strumenti reali. Conclusione con Q&A e bundle speciali per le scuole.",
     "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_experience_3_tappe_per_il_futuro_della_didattica_workshop_immersivo_a_rotazione_su_gemini_e_notebooklm_c2gog07",
     "capacity": 20,
-    "enrolled": 9
+    "enrolled": 10
   },
   {
     "date": "2026-03-12",
@@ -582,7 +595,7 @@
     "abstract": "In questo workshop dedicato alla scuola primaria ci divertiremo testando le nostre conoscenze sull’energia e le sue trasformazioni. Cercheremo soluzioni alternative per migliorare le prestazioni del nostro artefatto e collaboreremo tra noi per testare nuove funzioni!",
     "link": "https://exhibitor.fieradidacta.it/eventi/lenergia_si_trasforma_e_gli_oggetti_prendono_vita_con_il_kit_lego_education_spike_essential_c2leg07",
     "capacity": 12,
-    "enrolled": 4
+    "enrolled": 5
   },
   {
     "date": "2026-03-12",
@@ -712,7 +725,7 @@
     "abstract": "La gestione scolastica richiede velocità. In un laboratorio operativo di un'ora, scopri come l'AI di Google diventa il tuo miglior alleato. Attraverso tre stazioni di lavoro vedrai: NotebookLM analizzare complessi decreti e bandi PNRR; Gemini in Workspace automatizzare la stesura di circolari e dati di bilancio; Gemini Chatbot supportare strategie e comunicazioni istituzionali. Riduci drasticamente il carico burocratico e guadagna efficienza immediata.",
     "link": "https://exhibitor.fieradidacta.it/eventi/google_ai_per_la_governance_gemini_e_notebooklm_per_dirigenti_e_dsga_strategie_ed_efficienza_per_scuola_complessa_c2gog09",
     "capacity": 20,
-    "enrolled": 9
+    "enrolled": 12
   },
   {
     "date": "2026-03-13",
@@ -764,7 +777,7 @@
     "abstract": "-",
     "link": "https://exhibitor.fieradidacta.it/eventi/pronto_qui_1917_dialoghi_impossibili_nel_metaverso_c2del05",
     "capacity": 6,
-    "enrolled": 0
+    "enrolled": 2
   },
   {
     "date": "2026-03-13",
@@ -803,7 +816,7 @@
     "abstract": "La trasformazione digitale non si fa da soli, ma attraverso la visione, il confronto e in rete. In questo workshop sarà possibile incontrare i Facilitator dei circoli italiani ELP Leader e Admin che, insieme ai partner, sono a supporto delle scuole nel processo di innovazione. Saranno mostrate, inoltre, tutte le iniziative territoriali volte a rendere gli obiettivi della mission realizzabili.",
     "link": "https://exhibitor.fieradidacta.it/eventi/trasformare_la_scuola_con_le_comunita_google_elp_leader_admin_riuniamoci_per_fare_rete_c2agor10",
     "capacity": 30,
-    "enrolled": 8
+    "enrolled": 9
   },
   {
     "date": "2026-03-13",
@@ -816,7 +829,7 @@
     "abstract": "Realizzazione di un Merge Cube dedicato a figure femminili che hanno lasciato un segno significativo nella storia in diversi ambiti disciplinari: arte, scienza, moda, danza e innovazione. L’attività si configura come un percorso STEM integrato, in cui tecnologia, ricerca storica e competenze digitali si intrecciano con l’educazione civica e l’orientamento.",
     "link": "https://exhibitor.fieradidacta.it/eventi/donne_in_un_palmo_di_mano_c2del06",
     "capacity": 6,
-    "enrolled": 0
+    "enrolled": 1
   },
   {
     "date": "2026-03-13",
@@ -829,7 +842,7 @@
     "abstract": "Come ricorda il proverbio: “Non posso cambiare il mondo, ma gli occhi con cui lo guardo\".",
     "link": "https://exhibitor.fieradidacta.it/eventi/a_scuola_distressperche_lo_stress_non_e_in_orario_ma_entra_in_servizio_ogni_giorno",
     "capacity": 40,
-    "enrolled": 16
+    "enrolled": 17
   },
   {
     "date": "2026-03-13",
@@ -881,7 +894,7 @@
     "abstract": "Crea simulazioni immersive e tour 360° per laboratori all'avanguardia. Un ponte tra digitale e pratica professionale.",
     "link": "https://exhibitor.fieradidacta.it/eventi/oltre_laula_progettare_ecosistemi_interattivi_con_thinglink_per_laboratori_professionalizzanti_innovativi_c2sftw08",
     "capacity": 10,
-    "enrolled": 0
+    "enrolled": 1
   },
   {
     "date": "2026-03-13",
@@ -946,7 +959,7 @@
     "abstract": "La didattica digitale evolve con Education Plus. Partecipa al laboratorio per testare tre strumenti chiave: Lezione Attiva: trasforma i video in quiz e potenzia la lettura con l'AI.  Esercizi Guidati: automatizza le correzioni e ottieni dati immediati sulla classe. Regia di Classe: controlla gli schermi degli studenti e guida la navigazione in tempo reale.\r\nRiduci il carico di lavoro e trasforma ogni lezione in un'esperienza inclusiva.",
     "link": "https://exhibitor.fieradidacta.it/eventi/lezione_inclusiva_superpoteri_google_edu_plus_dai_video_ai_class_tools_un_workshop_immersivo_pratico_a_rotazione_c2gog11",
     "capacity": 20,
-    "enrolled": 4
+    "enrolled": 7
   },
   {
     "date": "2026-03-13",
