@@ -1463,7 +1463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="map-subtitle">Tocca un'area per scoprirne i dettagli</p>
     </div>
     <div class="map-container" id="mapContainer">
-      <img class="stand-map-img" src="mappa/Stand K42 - C2 Group.jpg" alt="Mappa Stand K42">
+      <img class="stand-map-img" src="mappa/stand.jpg" alt="Mappa Stand K42">
     </div>
   </div>
 
@@ -2022,7 +2022,7 @@ function openZone(zoneId) {
   // Hero image
   let heroHTML = '';
   if (zone.image) {
-    heroHTML = `<img class="zone-hero" src="${encodeURI(zone.image)}" alt="${zone.name}">`;
+    heroHTML = `<img class="zone-hero" src="${zone.image}" alt="${zone.name}">`;
   } else {
     heroHTML = `<div class="zone-hero-placeholder">${zone.emoji}</div>`;
   }
