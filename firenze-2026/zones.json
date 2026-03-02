@@ -1,0 +1,236 @@
+[
+  {
+    "id": "agora",
+    "name": "C2 Agorà",
+    "emoji": "🎤",
+    "image": "mappa/agora.jpg",
+    "description": "Nel nostro spazio di dibattito, tutti gli eventi più importanti con partner e case history reali.\n\n🎓 Il progetto che ha coinvolto 4mila scuole bresciane nell'adozione dell'AI di Gemini.\n🎓 La partnership con DSGA Online che aiuta le segreterie nella gestione amministrativa.\n🎓 I progetti sociali con le organizzazioni Bullismo No Grazie e AID.\n🎓 La formazione GEG che ci vede impegnati in tutta Italia.\n\nE molte altre attività con le nostre reti scolastiche protagoniste.",
+    "link": "https://c2group.click/eventi-agora",
+    "brands": [
+      "Google for Education",
+      "AID",
+      "Bullismo No Grazie",
+      "CIOFS",
+      "Corriere della Sera",
+      "DSGA Online",
+      "Okulus Scuola Sicura"
+    ],
+    "people": [
+      {
+        "name": "Enrico De Marco",
+        "role": "Strategic Marketing Manager"
+      }
+    ],
+    "pinX": 42,
+    "pinY": 45
+  },
+  {
+    "id": "google",
+    "name": "Aula C2 Google",
+    "emoji": "🔍",
+    "image": "mappa/google.jpg",
+    "description": "Powered by Acer.\n\nGoogle AI, Gemini, NotebookLM e tante, tantissime soluzioni dedicate a segreterie, docenti e dirigenti.\n\nSe sei un fan della didattica potenziata, dell'efficientamento di flussi, processi e gestione di progetti e segreteria… troverai pane per i tuoi denti.",
+    "link": "https://c2group.click/eventi-google",
+    "brands": [
+      "Google for Education"
+    ],
+    "people": [
+      {
+        "name": "Alessandro De Bono",
+        "role": "Responsabile Team Google for Education"
+      },
+      {
+        "name": "Alberto Zilio",
+        "role": "Google for Education Specialist"
+      }
+    ],
+    "pinX": 55,
+    "pinY": 18
+  },
+  {
+    "id": "steam",
+    "name": "Aula C2 STEAM",
+    "emoji": "🧱",
+    "image": "mappa/steam.jpg",
+    "description": "Lo spazio dove potrai trovare LEGO Education®.\n\nAll'interno dello spazio LEGO® Education ti aspetta il perfetto mix tra didattica tradizionale e STEM, grazie a:\n✅ Workshop hands-on LEGO® Education con i nostri docenti certificati.\n✅ I nuovissimi Kit LEGO® Education Informatica & IA, presentati per la prima volta in un contesto aperto al pubblico.",
+    "link": "https://c2group.click/eventi-lego",
+    "brands": [
+      "LEGO® Education"
+    ],
+    "people": [
+      {
+        "name": "Francesco Lamonaca",
+        "role": "Product Specialist C2 Group"
+      }
+    ],
+    "pinX": 75,
+    "pinY": 10
+  },
+  {
+    "id": "robotica",
+    "name": "Aula C2 Robotica",
+    "emoji": "🤖",
+    "image": "mappa/robotica.jpg",
+    "description": "Lo spazio dove potrai trovare i progetti Arduino.\n\nIl futuro della robotica ti aspetta nel nostro spazio Arduino, con workshop e demo pratiche non-stop.\n\n🛋️ Potrai scoprire le basi della domotica integrata con un progetto didattico di una vera Casa AI.\n🚀 Potrai scoprire come i sensori Vernier potenziano i prodotti Arduino.\n❤️ Potrai ascoltare dal vivo un progetto di riabilitazione di ragazzi che hanno subito danni cognitivi Powered by Arduino.",
+    "link": "https://c2group.click/eventi-robotica",
+    "brands": [
+      "Arduino"
+    ],
+    "people": [
+      {
+        "name": "Sukhpreet Singh",
+        "role": "Product Specialist C2 Group"
+      },
+      {
+        "name": "Manfredi Lino",
+        "role": "CEO Ml Systems"
+      },
+      {
+        "name": "Dario Daprà",
+        "role": "Sales Engineer & Marketing Manager TiesseRobot"
+      }
+    ],
+    "pinX": 72,
+    "pinY": 30
+  },
+  {
+    "id": "software",
+    "name": "C2 Software Area",
+    "emoji": "💻",
+    "image": "mappa/software.jpg",
+    "description": "Uno spazio con Genially, Adobe, ThingLink, Verse, Delightex Edu.\n\nTra i cavalli di battaglia di C2 Group c'è il tema dell'adozione tecnologica. A cosa servirebbero i dispositivi e gli strumenti IT, senza il carburante per farli rendere al meglio?\n\nNella nostra area dedicata, potrai scoprire come creare contenuti ingaggianti, come sviluppare la creatività dei ragazzi o più semplicemente come rendere più semplice la vita del personale scolastico con i software giusti.",
+    "link": "https://c2group.click/eventi-software",
+    "brands": [
+      "Adobe",
+      "Genially",
+      "ThingLink",
+      "Verse",
+      "Delightex Edu"
+    ],
+    "people": [
+      {
+        "name": "Rubina Arienti",
+        "role": "Responsabile Team Licenze"
+      },
+      {
+        "name": "Mauro Maddio",
+        "role": "Software Specialist"
+      },
+      {
+        "name": "Clea di Michele",
+        "role": "Country Manager Italia Genially"
+      },
+      {
+        "name": "Joseph Mayo",
+        "role": "Business Development Lead ThingLink"
+      },
+      {
+        "name": "Roberta Di Pofi",
+        "role": "Marketing Manager Delightex GmbH"
+      }
+    ],
+    "pinX": 30,
+    "pinY": 80
+  },
+  {
+    "id": "kairos",
+    "name": "Kairos — L'Aula delle Connessioni",
+    "emoji": "✨",
+    "image": "mappa/kairos.jpg",
+    "description": "Come coniugare apprendimento, inclusione, neuroscienze e immersività? In un'aula dove il tempo segue il passo degli studenti.\n\nKairos evolve il concetto di aula immersiva trasformandola in uno strumento terapeutico personalizzabile e misurabile.\n\nCome avremo modo di raccontarti insieme a Fondazione TOG e ai partner tecnologici Zebra ed Epson, servono 3 ingredienti fondamentali:\n💡 Le giuste idee.\n❤️ La giusta passione.\n📐 E 20mq di spazio.\n\nL'ingresso in quest'area è mediante visita guidata.",
+    "link": "https://c2group.click/eventi-kairos",
+    "brands": [
+      "Zebra Multimedia"
+    ],
+    "people": [
+      {
+        "name": "Andrea Cervi",
+        "role": "Product Specialist C2 Group"
+      }
+    ],
+    "pinX": 12,
+    "pinY": 35
+  },
+  {
+    "id": "labs",
+    "name": "Area Labs & Consulenza",
+    "emoji": "🔬",
+    "image": "mappa/labs.jpg",
+    "description": "L'area perfetta per Dirigenti e DSGA che vogliono progettare laboratori finanziabili e sostenibili, un luogo dove progettare investimenti realmente efficaci.\n\nTroverai brand e soluzioni sui temi della cybersecurity, workstation professionali, laboratori di nuova generazione, articoli STEM e robotica.\n\nE non solo. Due novità assolute:\n✅ La mela più conosciuta al mondo: Apple!\n✅ Il nuovo simulatore di Didacta Service, lanciato in anteprima nazionale.",
+    "link": null,
+    "brands": [],
+    "people": [
+      {
+        "name": "Francesco Lamonaca",
+        "role": "Product Specialist C2 Group"
+      },
+      {
+        "name": "Sergio Serrangeli",
+        "role": "Product Specialist C2 Group"
+      },
+      {
+        "name": "Cristina Sordo",
+        "role": "Sales Manager Zyxel"
+      },
+      {
+        "name": "Davide Benedetto",
+        "role": "CEO & Founder Refit&Dev"
+      },
+      {
+        "name": "Raffaele Talarico",
+        "role": "CTO Didacta Service"
+      }
+    ],
+    "pinX": 8,
+    "pinY": 8
+  },
+  {
+    "id": "emozioni",
+    "name": "Classe delle Emozioni",
+    "emoji": "💛",
+    "image": "mappa/emozioni.jpg",
+    "description": "Uno spazio che plasma gli studi sul contesto educativo, con Corner Infanzia.\n\nLo spazio è in grado di insegnare? Potrai scoprirlo in quest'area, realizzata traducendo dalla teoria alla pratica il Manifesto dell'Educazione Emotiva del Gruppo Editrice La Scuola.\n\nDove colori, arredi, grafiche, disposizioni e tecnologie come JOY seguono i principi della neuroarchitettura dando vita ad un progetto unico ed esclusivo realizzato da La Scuola e Università di Bolzano.",
+    "link": null,
+    "brands": [],
+    "people": [
+      {
+        "name": "Luca Bonisoli",
+        "role": "Product Specialist C2 Group"
+      },
+      {
+        "name": "Massimo di Liddo",
+        "role": "Direttore Atlantis"
+      },
+      {
+        "name": "Massimo Pezzera",
+        "role": "Sales Manager STAEDTLER Italia"
+      }
+    ],
+    "pinX": 20,
+    "pinY": 18
+  },
+  {
+    "id": "lounge",
+    "name": "C2 Lounge",
+    "emoji": "☕",
+    "image": "mappa/lounge.jpg",
+    "description": "L'area del nostro stand dedicata agli incontri con i nostri consulenti, dove approfondire i progetti per il tuo Istituto in tranquillità.\n\nTroverai qui il nostro catering pronto ad accoglierti al meglio.\n\nAll'interno di questo spazio, anche il nostro evento con MOIGE.",
+    "link": "https://exhibitor.fieradidacta.it/eventi?search=moige&name=moige",
+    "brands": [],
+    "people": [],
+    "pinX": 14,
+    "pinY": 72
+  },
+  {
+    "id": "infanzia",
+    "name": "Area Infanzia",
+    "emoji": "🧒",
+    "image": "mappa/infanzia.jpg",
+    "description": "In un ambiente educativo per la fascia 0-6 anni, ogni spazio è progettato con cura per rispondere ai bisogni reali dei bambini.\n\nL'ambiente diventa il \"terzo educatore\", offrendo sicurezza e autonomia attraverso arredi proporzionati e materiali naturali.\n\nL'Area Infanzia mira a coniugare visione pedagogica e funzionalità, con soluzioni adatte a costruire luoghi moderni e sostenibili che favoriscano il benessere emotivo e il desiderio di apprendere in ogni fase della crescita.",
+    "link": null,
+    "brands": [],
+    "people": [],
+    "pinX": 80,
+    "pinY": 55
+  }
+]
