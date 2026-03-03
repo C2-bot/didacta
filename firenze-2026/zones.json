@@ -63,8 +63,8 @@
         "role": "Product Specialist C2 Group"
       }
     ],
-    "pinX": 80,
-    "pinY": 15
+    "pinX": 84,
+    "pinY": 23
   },
   {
     "id": "robotica",
@@ -207,7 +207,7 @@
       }
     ],
     "pinX": 20,
-    "pinY": 18
+    "pinY": 22
   },
   {
     "id": "lounge",
