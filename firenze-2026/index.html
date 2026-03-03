@@ -7,7 +7,7 @@
 
 <!-- Open Graph -->
 <meta property="og:title" content="C2 Group — Stand K42 | Didacta Firenze 2026">
-<meta property="og:description" content="Scopri il programma completo dei nostri +80 eventi: workshop, demo, seminari e visite guidate. Pad. Spadolini Inferiore — 11 · 12 · 13 Marzo 2026.">
+<meta property="og:description" content="Scopri il programma completo dei nostri 78 eventi: workshop, demo, seminari e visite guidate. Pad. Spadolini Inferiore — 11 · 12 · 13 Marzo 2026.">
 <meta property="og:image" content="https://didacta.c2group.it/firenze-2026/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -1428,7 +1428,25 @@ body {
   .events-row { grid-template-columns: 1fr; }
   .modal-content { padding: 24px 24px 20px; }
   .modal-info-grid { grid-template-columns: 1fr; }
-  .day-selector { flex-direction: column; }
+  /* Compact day selector */
+  .day-selector { flex-direction: row; gap: 6px; margin-bottom: 18px; }
+  .day-btn {
+    padding: 10px 8px;
+    border-radius: var(--radius-sm);
+    border-width: 1.5px;
+  }
+  .day-btn .day-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 1px;
+  }
+  .day-btn .day-date {
+    font-size: 0.95rem;
+  }
+  .day-btn .day-count {
+    font-size: 0.65rem;
+    margin-top: 1px;
+  }
 
   /* Mobile pins */
   .pin-marker { width: 28px; height: 34px; }
