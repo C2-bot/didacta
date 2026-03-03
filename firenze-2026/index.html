@@ -1610,10 +1610,75 @@ let state = {
 };
 
 // ════════════════════════════════════════════════
+// URL SYNC — deep-linkable filters
+// ════════════════════════════════════════════════
+const ALL_TYPES = ['Workshop','Demo','Seminario','Visita Guidata'];
+
+function readURLToState() {
+  const p = new URLSearchParams(window.location.search);
+
+  if (p.has('day') && DATES.includes(p.get('day'))) {
+    state.activeDay = p.get('day');
+  }
+
+  if (p.has('type')) {
+    const types = p.get('type').split(',').filter(t => ALL_TYPES.includes(t));
+    if (types.length > 0) state.activeTypes = new Set(types);
+  }
+
+  if (p.has('room')) {
+    state.activeRoom = p.get('room');
+  }
+
+  if (p.has('q')) {
+    state.search = p.get('q').toLowerCase().trim();
+  }
+
+  if (p.has('tab')) {
+    state.urlTab = p.get('tab'); // applied after DOM ready
+  }
+}
+
+function syncURLFromState() {
+  const p = new URLSearchParams();
+
+  // Tab
+  const activeTab = document.querySelector('.tab.active');
+  if (activeTab && activeTab.dataset.tab !== 'eventi') {
+    p.set('tab', activeTab.dataset.tab);
+  }
+
+  // Day
+  if (state.activeDay !== DATES[0]) {
+    p.set('day', state.activeDay);
+  }
+
+  // Types (only if not all selected)
+  if (state.activeTypes.size < ALL_TYPES.length) {
+    p.set('type', [...state.activeTypes].join(','));
+  }
+
+  // Room
+  if (state.activeRoom) {
+    p.set('room', state.activeRoom);
+  }
+
+  // Search
+  if (state.search) {
+    p.set('q', state.search);
+  }
+
+  const qs = p.toString();
+  const newURL = window.location.pathname + (qs ? '?' + qs : '');
+  window.history.replaceState(null, '', newURL);
+}
+
+// ════════════════════════════════════════════════
 // INIT
 // ════════════════════════════════════════════════
 async function init() {
   await loadData();
+  readURLToState();
   buildDaySelector();
   buildTypeFilters();
   buildRoomFilters();
@@ -1622,6 +1687,33 @@ async function init() {
   bindModal();
   bindViewToggle();
   bindMobileFilters();
+
+  // Apply search from URL
+  if (state.search) {
+    document.getElementById('searchInput').value = state.search;
+  }
+
+  // Sync mobile dropdowns from URL state
+  if (state.activeRoom) {
+    document.getElementById('mobileRoomFilter').value = state.activeRoom;
+  }
+  if (state.activeTypes.size === 1) {
+    document.getElementById('mobileTypeFilter').value = [...state.activeTypes][0];
+  } else if (state.activeTypes.size < ALL_TYPES.length) {
+    document.getElementById('mobileTypeFilter').value = 'all';
+  }
+
+  // Apply tab from URL
+  if (state.urlTab) {
+    const tabBtn = document.querySelector(`.tab[data-tab="${state.urlTab}"]`);
+    if (tabBtn) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      tabBtn.classList.add('active');
+      document.getElementById('tab-' + state.urlTab).classList.add('active');
+    }
+  }
+
   render();
   loadZones();
 
@@ -1640,6 +1732,7 @@ function bindTabs() {
       document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+      syncURLFromState();
     });
   });
 }
@@ -1671,7 +1764,8 @@ function buildTypeFilters() {
   const el = document.getElementById('typeFilters');
   el.innerHTML = types.map(t => {
     const count = EVENTS.filter(e => e.type === t && e.date === state.activeDay).length;
-    return `<button class="type-pill active" data-type="${t}">
+    const isActive = state.activeTypes.has(t);
+    return `<button class="type-pill ${isActive ? 'active' : ''}" data-type="${t}">
       <span class="type-dot"></span> ${t} <span class="pill-count">${count}</span>
     </button>`;
   }).join('');
@@ -1703,8 +1797,8 @@ function buildRoomFilters() {
   const rooms = [...new Set(EVENTS.map(e => e.room))].sort();
   const el = document.getElementById('roomFilters');
   el.innerHTML = '<span class="filter-label" style="margin-right:2px">Area:</span>' +
-    `<button class="room-pill active" data-room="all">Tutte</button>` +
-    rooms.map(r => `<button class="room-pill" data-room="${r}">${r}</button>`).join('');
+    `<button class="room-pill ${!state.activeRoom ? 'active' : ''}" data-room="all">Tutte</button>` +
+    rooms.map(r => `<button class="room-pill ${state.activeRoom === r ? 'active' : ''}" data-room="${r}">${r}</button>`).join('');
 
   el.querySelectorAll('.room-pill').forEach(pill => {
     pill.addEventListener('click', () => {
@@ -1824,6 +1918,7 @@ function render() {
       <div class="empty-icon">🔍</div>
       <p>Nessun evento trovato con i filtri selezionati</p>
     </div>`;
+    syncURLFromState();
     return;
   }
 
@@ -1837,6 +1932,8 @@ function render() {
   timeline.querySelectorAll('.event-card').forEach(card => {
     card.addEventListener('click', () => openModal(card.dataset.code));
   });
+
+  syncURLFromState();
 }
 
 const ROOM_ICONS = {
