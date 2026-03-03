@@ -22,7 +22,7 @@
       }
     ],
     "pinX": 50,
-    "pinY": 50
+    "pinY": 55
   },
   {
     "id": "google",
@@ -231,6 +231,6 @@
     "brands": [],
     "people": [],
     "pinX": 80,
-    "pinY": 55
+    "pinY": 70
   }
 ]
