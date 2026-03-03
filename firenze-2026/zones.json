@@ -21,8 +21,8 @@
         "role": "Strategic Marketing Manager"
       }
     ],
-    "pinX": 42,
-    "pinY": 45
+    "pinX": 50,
+    "pinY": 50
   },
   {
     "id": "google",
@@ -63,8 +63,8 @@
         "role": "Product Specialist C2 Group"
       }
     ],
-    "pinX": 75,
-    "pinY": 10
+    "pinX": 80,
+    "pinY": 15
   },
   {
     "id": "robotica",
@@ -90,8 +90,8 @@
         "role": "Sales Engineer & Marketing Manager TiesseRobot"
       }
     ],
-    "pinX": 72,
-    "pinY": 30
+    "pinX": 88,
+    "pinY": 88
   },
   {
     "id": "software",
@@ -149,7 +149,7 @@
       }
     ],
     "pinX": 12,
-    "pinY": 35
+    "pinY": 47
   },
   {
     "id": "labs",
@@ -181,8 +181,8 @@
         "role": "CTO Didacta Service"
       }
     ],
-    "pinX": 8,
-    "pinY": 8
+    "pinX": 55,
+    "pinY": 85
   },
   {
     "id": "emozioni",
