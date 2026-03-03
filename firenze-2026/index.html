@@ -1005,42 +1005,75 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
   z-index: 2;
-  transition: transform 0.2s;
+  transition: transform 0.2s, filter 0.2s;
   padding: 0;
+  animation: pin-attract 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 3;
+  animation-delay: var(--pin-delay, 0s);
 }
 
 .map-pin:hover,
 .map-pin:active {
-  transform: translate(-50%, -100%) scale(1.15);
+  transform: translate(-50%, -100%) scale(1.12);
+  filter: brightness(1.1);
+  z-index: 5;
 }
 
-.pin-dot {
-  width: 18px;
-  height: 18px;
+.pin-marker {
+  position: relative;
+  width: 36px;
+  height: 44px;
   background: var(--c2-accent);
-  border: 3px solid white;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  animation: pin-pulse 2s ease-in-out infinite;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 3px 12px rgba(255,107,43,0.4);
 }
 
-@keyframes pin-pulse {
-  0%, 100% { box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
-  50% { box-shadow: 0 2px 8px rgba(0,0,0,0.3), 0 0 0 6px rgba(255,107,43,0.2); }
+.pin-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+}
+
+.pin-marker-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  font-size: 0.85rem;
+  z-index: 1;
+  line-height: 1;
 }
 
 .pin-label {
   font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 700;
   color: white;
-  background: rgba(0,0,0,0.7);
-  padding: 2px 7px;
-  border-radius: 4px;
+  background: var(--c2-blue);
+  padding: 3px 10px;
+  border-radius: 6px;
   white-space: nowrap;
-  margin-top: 4px;
+  margin-top: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  opacity: 0.9;
+}
+
+.map-pin:hover .pin-label {
+  opacity: 1;
+  background: var(--c2-blue-dark);
+}
+
+@keyframes pin-attract {
+  0% { transform: translate(-50%, -100%) scale(1); }
+  50% { transform: translate(-50%, -100%) scale(1.25); }
+  100% { transform: translate(-50%, -100%) scale(1); }
 }
 
 /* ─── ZONE MODAL ────────────────────────────── */
@@ -1342,6 +1375,19 @@ body {
   .brand { justify-content: center; }
   .header-info { text-align: center; }
 
+  /* Bookmark-style tabs */
+  .tabs { gap: 2px; }
+  .tab {
+    padding: 8px 16px;
+    font-size: 0.78rem;
+    border-radius: 8px 8px 0 0;
+    letter-spacing: 0;
+  }
+  .tab-icon {
+    margin-right: 5px;
+    font-size: 0.9em;
+  }
+
   /* Hide desktop pills, show mobile dropdowns */
   .type-filters { display: none !important; }
   .room-filter-row { display: none !important; }
@@ -1364,8 +1410,13 @@ body {
   .modal-content { padding: 24px 24px 20px; }
   .modal-info-grid { grid-template-columns: 1fr; }
   .day-selector { flex-direction: column; }
-  .pin-label { font-size: 0.52rem; padding: 2px 5px; }
-  .pin-dot { width: 14px; height: 14px; border-width: 2px; }
+
+  /* Mobile pins */
+  .pin-marker { width: 28px; height: 34px; }
+  .pin-marker::after { width: 12px; height: 12px; }
+  .pin-marker-icon { font-size: 0.7rem; }
+  .pin-label { font-size: 0.52rem; padding: 2px 6px; margin-top: 4px; }
+
   .zone-overlay { padding: 20px 12px; }
   .zone-body { padding: 20px; }
   .zone-name { font-size: 1.15rem; }
@@ -1998,14 +2049,17 @@ function renderMapPins() {
   // Remove existing pins
   container.querySelectorAll('.map-pin').forEach(p => p.remove());
 
-  ZONES.forEach(zone => {
+  ZONES.forEach((zone, i) => {
     const pin = document.createElement('button');
     pin.className = 'map-pin';
     pin.dataset.zone = zone.id;
     pin.style.left = zone.pinX + '%';
     pin.style.top = zone.pinY + '%';
+    pin.style.setProperty('--pin-delay', (i * 0.15) + 's');
     pin.innerHTML = `
-      <div class="pin-dot"></div>
+      <div class="pin-marker">
+        <span class="pin-marker-icon">${zone.emoji}</span>
+      </div>
       <span class="pin-label">${zone.name}</span>
     `;
     container.appendChild(pin);
