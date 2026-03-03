@@ -44,8 +44,8 @@
         "role": "Google for Education Specialist"
       }
     ],
-    "pinX": 55,
-    "pinY": 18
+    "pinX": 80,
+    "pinY": 53
   },
   {
     "id": "steam",
@@ -130,7 +130,7 @@
       }
     ],
     "pinX": 30,
-    "pinY": 80
+    "pinY": 40
   },
   {
     "id": "kairos",
@@ -148,7 +148,7 @@
         "role": "Product Specialist C2 Group"
       }
     ],
-    "pinX": 12,
+    "pinX": 55,
     "pinY": 47
   },
   {
@@ -218,8 +218,8 @@
     "link": "https://exhibitor.fieradidacta.it/eventi?search=moige&name=moige",
     "brands": [],
     "people": [],
-    "pinX": 14,
-    "pinY": 72
+    "pinX": 17,
+    "pinY": 92
   },
   {
     "id": "infanzia",
