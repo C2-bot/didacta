@@ -1,11 +1,11 @@
 [
   {
-    "id": "google",
-    "title": "Google for Education",
-    "image": "materiali/brochure_google.jpg",
-    "abstract": "L’ecosistema Google for Education per trasformare l’apprendimento, semplificare la gestione e proteggere i tuoi dati. Progettato per rispondere a ogni esigenza del tuo Istituto: dalla tutela della privacy alla didattica interattiva, dall’inclusione alla potenza dell’Intelligenza Artificiale.",
-    "link": "https://online.flippingbook.com/view/20738651/",
-    "category": "Soluzioni"
+    "id": "company",
+    "title": "Company Profile",
+    "image": "materiali/brochure_company.jpg",
+    "abstract": "Da oltre 25 anni operiamo nel mercato dell’Education Technology e della Pubblica Amministrazione, con una ricerca continua di strumenti, ambienti e metodologie innovativi.",
+    "link": "https://online.flippingbook.com/view/698416112/",
+    "category": "Brochure Istituzionali"
   },
   {
     "id": "laboratori",
@@ -13,31 +13,7 @@
     "image": "materiali/brochure_laboratori.jpg",
     "abstract": "Ambienti didattici altamente specializzati, progettati per stimolare l’apprendimento professionale, interdisciplinare e basato sullo sperimentare. Scegli liberamente i prodotti, fatti guidare dai nostri laboratori completi o avvaliti dei nostri esperti per un laboratorio personalizzato.",
     "link": "https://online.flippingbook.com/view/705880916/",
-    "category": "Cataloghi"
-  },
-  {
-    "id": "software",
-    "title": "Catalogo Software",
-    "image": "materiali/brochure_software.jpg",
-    "abstract": "Le piattaforme didattiche ottimizzano l’organizzazione delle classi, l’integrazione di contenuti digitali, la distribuzione dei compiti e la raccolta dei risultati, facilitando i docenti nella creazione di contenuti coinvolgenti.",
-    "link": "https://online.flippingbook.com/view/20533012/",
-    "category": "Cataloghi"
-  },
-  {
-    "id": "infanzia",
-    "title": "Catalogo Infanzia",
-    "image": "materiali/brochure_infanzia.jpg",
-    "abstract": "In un ambiente educativo per la fascia 0-6 anni, ogni spazio è progettato con cura per rispondere ai bisogni reali dei bambini. L’ambiente diventa il \"terzo educatore\", offrendo sicurezza e autonomia.",
-    "link": "https://online.flippingbook.com/view/448628615/",
-    "category": "Cataloghi"
-  },
-  {
-    "id": "arredi",
-    "title": "Arredi Laboratoriali",
-    "image": "materiali/brochure_arredi.jpg",
-    "abstract": "Arredi, tavoli, sedute e postazioni studiati per la didattica quotidiana: modularità, ergonomia e facilità di configurazione per creare spazi ordinati, confortevoli e pronti all’uso.",
-    "link": "https://online.flippingbook.com/view/846580504/",
-    "category": "Cataloghi"
+    "category": "Soluzioni Complete"
   },
   {
     "id": "workstation",
@@ -45,23 +21,39 @@
     "image": "materiali/brochure_workstation.jpg",
     "abstract": "La gamma offerta da C2 nasce con sistema operativo Professional originale e drivers certificati dal produttore. Per laboratori professionalizzanti finanziati e non solo.",
     "link": "https://online.flippingbook.com/view/326511088/",
-    "category": "Cataloghi"
+    "category": "Prodotti"
   },
   {
-    "id": "convenzioni",
-    "title": "Convenzione Scuola",
-    "image": "materiali/brochure_convenzioni.jpg",
-    "abstract": "Una scelta per il futuro: guidare famiglie e studenti verso soluzioni tecnologiche condivise, sicure e funzionali, per garantire negli anni l’uguaglianza didattica.",
-    "link": "https://online.flippingbook.com/view/200771600/",
-    "category": "Servizi"
+    "id": "arredi",
+    "title": "Arredi Laboratoriali",
+    "image": "materiali/brochure_arredi.jpg",
+    "abstract": "Arredi, tavoli, sedute e postazioni studiati per la didattica quotidiana: modularità, ergonomia e facilità di configurazione per creare spazi ordinati, confortevoli e pronti all’uso.",
+    "link": "https://online.flippingbook.com/view/846580504/",
+    "category": "Prodotti"
   },
   {
-    "id": "company",
-    "title": "Company Profile",
-    "image": "materiali/brochure_company.jpg",
-    "abstract": "Da oltre 25 anni operiamo nel mercato dell’Education Technology e della Pubblica Amministrazione, con una ricerca continua di strumenti, ambienti e metodologie innovativi.",
-    "link": "https://online.flippingbook.com/view/698416112/",
-    "category": "C2 Group"
+    "id": "infanzia",
+    "title": "Catalogo Infanzia",
+    "image": "materiali/brochure_infanzia.jpg",
+    "abstract": "In un ambiente educativo per la fascia 0-6 anni, ogni spazio è progettato con cura per rispondere ai bisogni reali dei bambini. L’ambiente diventa il \"terzo educatore\", offrendo sicurezza e autonomia.",
+    "link": "https://online.flippingbook.com/view/448628615/",
+    "category": "Soluzioni Complete"
+  },
+  {
+    "id": "software",
+    "title": "Catalogo Software",
+    "image": "materiali/brochure_software.jpg",
+    "abstract": "Le piattaforme didattiche ottimizzano l’organizzazione delle classi, l’integrazione di contenuti digitali, la distribuzione dei compiti e la raccolta dei risultati, facilitando i docenti nella creazione di contenuti coinvolgenti.",
+    "link": "https://online.flippingbook.com/view/20533012/",
+    "category": "Prodotti"
+  },
+  {
+    "id": "google",
+    "title": "Google for Education",
+    "image": "materiali/brochure_google.jpg",
+    "abstract": "L’ecosistema Google for Education per trasformare l’apprendimento, semplificare la gestione e proteggere i tuoi dati. Progettato per rispondere a ogni esigenza del tuo Istituto: dalla tutela della privacy alla didattica interattiva, dall’inclusione alla potenza dell’Intelligenza Artificiale.",
+    "link": "https://online.flippingbook.com/view/20738651/",
+    "category": "Prodotti"
   },
   {
     "id": "pa",
@@ -69,7 +61,7 @@
     "image": "materiali/brochure_PA.jpg",
     "abstract": "C2 Group è leader in Italia per la consulenza e la fornitura alla Pubblica Amministrazione, alle Università e agli Istituti Scolastici. Da oltre 25 anni supportiamo i nostri clienti nella scelta delle soluzioni digitali più efficaci.",
     "link": "https://online.flippingbook.com/view/995188411/",
-    "category": "Servizi"
+    "category": "Soluzioni per PA"
   },
   {
     "id": "risorse-comune",
@@ -77,6 +69,14 @@
     "image": "materiali/brochure_Risorse_In_Comune.jpg",
     "abstract": "Con il bando del Dipartimento della funzione pubblica, gli Enti comunali tra 5.000 e 25.000 abitanti potranno beneficiare di risorse per il rinnovamento di spazi e lo sviluppo tecnologico.",
     "link": "https://online.flippingbook.com/view/105949442/",
+    "category": "Soluzioni per PA"
+  },
+  {
+    "id": "convenzioni",
+    "title": "Convenzione Scuola",
+    "image": "materiali/brochure_convenzioni.jpg",
+    "abstract": "Una scelta per il futuro: guidare famiglie e studenti verso soluzioni tecnologiche condivise, sicure e funzionali, per garantire negli anni l’uguaglianza didattica.",
+    "link": "https://online.flippingbook.com/view/200771600/",
     "category": "Servizi"
   }
 ]
