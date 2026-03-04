@@ -2388,7 +2388,7 @@ function openBrochure(bid) {
   window.sleeknoteSiteData = window.sleeknoteSiteData || [];
   window.sleeknoteSiteData.push({key: 'brochure_id', value: m.id});
   window.sleeknoteSiteData.push({key: 'brochure_title', value: m.title});
-  window.sleeknoteSiteData.push({'brochure_category': m.category});
+  window.sleeknoteSiteData.push({key:'brochure_category': m.category});
   window.sleeknoteSiteData.push({key: 'brochure_link', value: m.link});
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
