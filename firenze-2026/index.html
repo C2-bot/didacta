@@ -1499,7 +1499,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Sleeknote click trigger (persistente nel DOM, nascosto) -->
 <button id="sleeknoteClickTrigger" class="cta-dettagli-evento" style="position:fixed;left:-9999px;top:-9999px;opacity:0;width:1px;height:1px;" aria-hidden="true"></button>
-<button id="sleeknoteClickTriggerBrochure" class="cta-dettagli-brochure" style="position:fixed;left:-9999px;top:-9999px;opacity:0;width:1px;height:1px;" aria-hidden="true"></button>
+<button id="sleeknoteClickTriggerBrochure" class="cta-richiedi-brochure" style="position:fixed;left:-9999px;top:-9999px;opacity:0;width:1px;height:1px;" aria-hidden="true"></button>
 
 <div class="header">
   <div class="header-top">
@@ -2368,7 +2368,7 @@ function openBrochure(bid) {
       <div class="brochure-name">${m.title}</div>
       <div class="brochure-desc">${m.abstract}</div>
       <div class="brochure-actions">
-        <button class="brochure-cta cta-dettagli-brochure" data-brochure-id="${m.id}" data-brochure-title="${m.title}">
+        <button class="brochure-cta cta-richiedi-brochure" data-brochure-id="${m.id}" data-brochure-title="${m.title}">
           \u2709\uFE0F Ricevi brochure via email
         </button>
         <a class="brochure-link" href="${m.link}" target="_blank">\uD83D\uDD0D Sfoglia online</a>
@@ -2404,9 +2404,9 @@ function bindBrochureModal() {
   document.getElementById('brochureOverlay').addEventListener('click', (e) => {
     if (e.target === document.getElementById('brochureOverlay')) closeBrochure();
   });
-  // CTA click: push to dataLayer (Sleeknote catches click natively via class cta-dettagli-brochure)
+  // CTA click: push to dataLayer (Sleeknote catches click natively via class cta-richiedi-brochure)
   document.addEventListener('click', (e) => {
-    const cta = e.target.closest('.cta-dettagli-brochure');
+    const cta = e.target.closest('.cta-richiedi-brochure');
     if (cta && cta.dataset.brochureId) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
