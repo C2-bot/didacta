@@ -2162,6 +2162,9 @@ function openModal(code) {
       <button class="btn-primary cta-dettagli-evento" data-event-code="${e.code}">
         ✉️ Ricevi dettagli via email
       </button>
+      ${e.link ? `<a class="btn-secondary" href="${e.link}" target="_blank">
+        📝 Iscriviti su Didacta
+      </a>` : ''}
     </div>
   `;
 
@@ -2388,7 +2391,7 @@ function openBrochure(bid) {
   window.sleeknoteSiteData = window.sleeknoteSiteData || [];
   window.sleeknoteSiteData.push({key: 'brochure_id', value: m.id});
   window.sleeknoteSiteData.push({key: 'brochure_title', value: m.title});
-  window.sleeknoteSiteData.push({key:'brochure_category': m.category});
+  window.sleeknoteSiteData.push({'brochure_category': m.category});
   window.sleeknoteSiteData.push({key: 'brochure_link', value: m.link});
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
