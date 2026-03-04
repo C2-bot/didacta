@@ -2350,6 +2350,7 @@ function renderMaterials() {
     <div class="mat-card" data-brochure="${m.id}">
       <img class="mat-card-img" src="${m.image}" alt="${m.title}" loading="lazy">
       <div class="mat-card-body">
+        <div class="mat-card-category">${m.category}</div>
         <div class="mat-card-title">${m.title}</div>
         <div class="mat-card-abstract">${m.abstract}</div>
       </div>
@@ -2365,6 +2366,7 @@ function openBrochure(bid) {
   content.innerHTML = `
     <img class="brochure-hero" src="${m.image}" alt="${m.title}">
     <div class="brochure-body">
+      <div class="mat-card-category">${m.category}</div>
       <div class="brochure-name">${m.title}</div>
       <div class="brochure-desc">${m.abstract}</div>
       <div class="brochure-actions">
@@ -2380,11 +2382,13 @@ function openBrochure(bid) {
     'event': 'brochure_aperta',
     'brochure_id': m.id,
     'brochure_title': m.title,
+    'brochure_category': m.category,
     'brochure_link': m.link
   });
   window.sleeknoteSiteData = window.sleeknoteSiteData || [];
   window.sleeknoteSiteData.push({key: 'brochure_id', value: m.id});
   window.sleeknoteSiteData.push({key: 'brochure_title', value: m.title});
+  window.sleeknoteSiteData.push({'brochure_category': m.category});
   window.sleeknoteSiteData.push({key: 'brochure_link', value: m.link});
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
